@@ -28,7 +28,7 @@ export default function Loading() {
     <Container>
     <Wrapper justify="center">
       <h2>Loading...</h2>
-      <img className='spinner' src='../../img/titled-bug.png' />
+      <img className='spinner' src='../../img/titled-bug.png' alt='Bug Logo' />
     </Wrapper>
     </Container>
   );
