@@ -1,0 +1,5 @@
+/* All users can add a bug
+
+admins can edit and delete bug
+
+populates with data*/

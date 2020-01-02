@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 import '../../assets/css/landing.css';
 import lambdaBanner from '../../assets/img/lambda-banner.png'
@@ -13,8 +13,6 @@ import jimmy from '../../assets/img/jimmy.png';
 import joscelyn from '../../assets/img/joscelyn.png';
 import tommy from '../../assets/img/tommy.png';
 import robert from '../../assets/img/robert.png';
-
-import { Wrapper, Linkton, FlexBox } from 'bushido-strap';
 
 export default function LandingPage() {
   return (
