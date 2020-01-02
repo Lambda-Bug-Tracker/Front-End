@@ -10,6 +10,10 @@ import { useDrag } from 'react-dnd'
 
 import { Card } from 'bushido-strap'
 import butterfly from '../../images/butterfly.png'
+import beetle from '../../images/beetle.png'
+import bee from '../../images/b.png'
+const priorityTest = 3
+const typeTest = 3
 
 
 export function BugCard(props) {
@@ -20,14 +24,25 @@ export function BugCard(props) {
         })
     })
     return(
-        <Card ref={drag} style={{opacity: isDragging ? 0.5 : 1}} width='90%' align='flex-start'  >
+        <Card ref={drag} style={{
+            opacity: isDragging ? 0.5 : 1,
+            boxShadow: priorityTest === 1 ? '0 0.3rem 1rem red' :
+                priorityTest === 2 ?  '0 0.3rem 1rem yellow' :
+                priorityTest === 3 ? '0 0.3rem 1rem blue' :
+                null
+            }} width='90%' align='flex-start'  >
             <div >
-            <img src={butterfly}  style={{width: '20%'}}/> 
+            <img src={
+                typeTest === 1 ? bee :
+                typeTest === 2 ? beetle :
+                typeTest === 3 ? butterfly:
+                null
+            }  style={{width: '20%'}}/> 
             <span> {props.name} Bug Name </span>
             </div>
         
            <p> {props.description} Bug Description </p> 
-           <h5>!</h5>
+        <h5>{priorityTest === 1 && '!'}{priorityTest === 2 && '!!'}{priorityTest === 3 && '!!!'}</h5>
         </Card>
     )
 }
