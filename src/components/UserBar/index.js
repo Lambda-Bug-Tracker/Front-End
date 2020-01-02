@@ -2,6 +2,10 @@ import React from "react";
 import "./styles.scss";
 import { Wrapper, FlexBox } from "bushido-strap";
 
+import b from "../../images/b.png";
+import beetle from "../../images/beetle.png"
+import butterfly from "../../images/butterfly.png"
+
 export default function UserBar () {
 
     return (
@@ -20,9 +24,9 @@ export default function UserBar () {
                 </FlexBox>
                 <FlexBox className="key-list">
                     <h4>Key</h4>
-                    <p>UI/UX</p>
-                    <p>Front End</p>
-                    <p>Back End</p>
+                    <a href="#"><img id="butterfly" src={butterfly} alt="Butterfly" />UI/UX</a>
+                    <a href="#"><img src={b} alt="Bee" />Front End</a>
+                    <a href="#"><img src={beetle} alt="Beetle" />Back End</a>
                 </FlexBox>
             </FlexBox>
         </Wrapper>
