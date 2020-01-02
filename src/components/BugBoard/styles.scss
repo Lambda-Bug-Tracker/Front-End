@@ -1,4 +1,5 @@
 $desktop: "(min-width: 769px)";
+$phone: "(min-width: 320px) and (max-width: 768px)";
 
 .header-container {
   justify-content: center;
@@ -26,9 +27,18 @@ $desktop: "(min-width: 769px)";
 .bug-board-container {
   background-color: #14131c;
   color: white;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
 
   .top-container {
     background-color: white;
+  }
+
+  .sidebar-container{
+    @media #{$phone}{
+      display: none;
+    }
   }
 
   main {
