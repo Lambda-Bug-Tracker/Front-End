@@ -7,6 +7,8 @@ import HamburgerMenu from "../Menus/HamburgerMenu.js";
 import "./styles.scss";
 import { Wrapper, FlexBox } from "bushido-strap";
 
+import UserBar from "../UserBar"
+
 const BugBoard = () => {
   return (
     <Wrapper className="bug-board-container" width="100%">
