@@ -1,21 +1,21 @@
-.hamburger-menu-container {
-  position: relative;
-  .hamburger-menu {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    color: black;
-  }
-}
+$desktop: "(min-width: 769px)";
 
 .header-container {
-  justify-content: flex-start;
+  justify-content: center;
   margin-top: 2rem;
   font-size: 5rem;
   color: black;
 
   h1 {
     display: none;
+    color: #202020;
+
+    @media #{$desktop} {
+      display: flex;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: bold;
+    }
   }
 
   .logo {
@@ -24,16 +24,19 @@
 }
 
 .bug-board-container {
-  background-color: #bb1333;
+  background-color: #14131c;
   color: white;
-}
 
-.top-container {
-  background-color: white;
-}
+  .top-container {
+    background-color: white;
+  }
 
-main {
+  main {
+    width: 70%;
+    border: 2px solid red;
+  }
   h2 {
-    text-align: center;
+    text-align: left;
+    margin: 3%;
   }
 }
