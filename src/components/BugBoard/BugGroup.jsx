@@ -1,5 +1,7 @@
 import React from "react";
 import { Wrapper, FlexBox } from "bushido-strap";
+import { BugCard } from './BugCard'
+
 
 import Column1 from './Columns/Column1';
 import Column2 from './Columns/Column2';
@@ -9,6 +11,7 @@ import Column4 from './Columns/Column4';
 import "./BugGroup.styles.scss";
 
 const BugGroup = () => {
+  
   return (
     <Wrapper>
       <div className="bug-group-container">
