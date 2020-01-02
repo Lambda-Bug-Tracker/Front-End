@@ -2,24 +2,24 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 
-import Loading from '../../Loading/'
+import Loading from "../../Loading/";
 
 import { Form, Input, Button } from "bushido-strap";
 
-import styled from 'styled-components'
+import styled from "styled-components";
 
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router";
 
 import { authenticate } from "../../../store/actions/auth";
 
-const Container = styled.div `
+const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 150px;
-  .title{
+  .title {
     margin: 10px;
   }
   .error {
@@ -27,10 +27,12 @@ const Container = styled.div `
     margin: 5px;
     color: red;
   }
+
   p {
     color: red;
   }
 `
+
 
 const schema = yup.object().shape({
   first_name: yup.string().required('First name required!'),
@@ -43,14 +45,17 @@ export default function Register() {
   const dispatch = useDispatch();
   const history = useHistory();
 
+
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState()
+
   const [data, setData] = useState({
     first_name: "",
     last_name: "",
     email: "",
-		password: "",
-	})
+    password: ""
+  });
+
 
   const { register, handleSubmit, errors } = useForm({
     validationSchema: schema
@@ -66,6 +71,7 @@ export default function Register() {
   const onSubmit = data => {
     console.log(data)
     setIsLoading(true)
+
     dispatch(authenticate());
     history.push("/");
   };
@@ -73,6 +79,7 @@ export default function Register() {
   return (
     <Container>
       <div className="title">Register for Lambda Bugtracker</div>
+
       { isLoading ? <Loading /> : 
         <Form onSubmit={handleSubmit(onSubmit)}>
           <Input type="text" name='first_name' value={data.first_name} onChange={handleChange} placeholder="First Name" ref={register} />
@@ -83,10 +90,11 @@ export default function Register() {
           {errors.email && <p>{errors.email.message}</p>}
           <Input type="password" name='password' value={data.password} onChange={handleChange} placeholder="Password" ref={register} />
           {errors.password && <p>{errors.password.message}</p>}
+
           <Button type="submit">Register</Button>
           {error && <div className="error">{error}</div>}
         </Form>
-      }
+      )}
     </Container>
   );
 }
