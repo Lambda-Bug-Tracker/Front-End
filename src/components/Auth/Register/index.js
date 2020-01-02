@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useForm } from "react-hook-form";
+import * as yup from "yup";
 
 import Loading from '../../Loading/'
 
@@ -25,7 +27,17 @@ const Container = styled.div `
     margin: 5px;
     color: red;
   }
+  p {
+    color: red;
+  }
 `
+
+const schema = yup.object().shape({
+  first_name: yup.string().required('First name required!'),
+  last_name: yup.string().required('Last name required!'),
+  email: yup.string().email('Invalid email!').required('Email required!'),
+  password: yup.string().min(8, 'Minimum 8 characters!').required('Invalid password!'),
+});
 
 export default function Register() {
   const dispatch = useDispatch();
@@ -34,12 +46,15 @@ export default function Register() {
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState(true)
   const [data, setData] = useState({
-    firstname: "",
-    lastname: "",
-    username: "",
+    first_name: "",
+    last_name: "",
     email: "",
 		password: "",
 	})
+
+  const { register, handleSubmit, errors } = useForm({
+    validationSchema: schema
+  });
 
 	const handleChange = (event) => {
 		setData({
@@ -48,12 +63,7 @@ export default function Register() {
 		})
 	}
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setData({
-      ...data,
-      username: data.firstname+data.lastname
-    })
+  const onSubmit = data => {
     console.log(data)
     setIsLoading(true)
     dispatch(authenticate());
@@ -64,11 +74,15 @@ export default function Register() {
     <Container>
       <div className="title">Register for Lambda Bugtracker</div>
       { isLoading ? <Loading /> : 
-        <Form onSubmit={handleSubmit}>
-          <Input type="text" name='firstname' value={data.firstname} onChange={handleChange} placeholder="First Name" />
-          <Input type="text" name='lastname' value={data.lastname} onChange={handleChange} placeholder="Last Name" />
-          <Input type="text" name='email' value={data.email} onChange={handleChange} placeholder="Email" />
-          <Input type="password" name='password' value={data.password} onChange={handleChange} placeholder="Password" />
+        <Form onSubmit={handleSubmit(onSubmit)}>
+          <Input type="text" name='first_name' value={data.first_name} onChange={handleChange} placeholder="First Name" ref={register} />
+          {errors.first_name && <p>{errors.first_name.message}</p>}
+          <Input type="text" name='last_name' value={data.last_name} onChange={handleChange} placeholder="Last Name" ref={register} />
+          {errors.last_name && <p>{errors.last_name.message}</p>}
+          <Input type="text" name='email' value={data.email} onChange={handleChange} placeholder="Email" ref={register} />
+          {errors.email && <p>{errors.email.message}</p>}
+          <Input type="password" name='password' value={data.password} onChange={handleChange} placeholder="Password" ref={register} />
+          {errors.password && <p>{errors.password.message}</p>}
           <Button type="submit">Register</Button>
           {error && <div className="error">{error}</div>}
         </Form>
