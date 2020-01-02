@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import Loading from '../../Loading/'
 
-import { Wrapper, Form, Input, Button } from "bushido-strap";
+import { Form, Input, Button } from "bushido-strap";
 
 import styled from 'styled-components'
 
@@ -56,8 +56,8 @@ export default function Register() {
     })
     console.log(data)
     setIsLoading(true)
-    // dispatch(authenticate());
-    // history.push("/");
+    dispatch(authenticate());
+    history.push("/");
   };
 
   return (
