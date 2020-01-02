@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import '../BugGroup.styles.scss';
 
 const Column2 = () => {
     return (
