@@ -3,7 +3,7 @@
 import React from "react";
 import BugGroup from "./BugGroup.jsx";
 import Logo from "../../images/tilt-left.png";
-
+import HamburgerMenu from "../Menus/HamburgerMenu.js";
 import "./styles.scss";
 import { Wrapper, FlexBox } from "bushido-strap";
 
@@ -17,6 +17,7 @@ const BugBoard = () => {
             <img className="logo" alt="logo" src={Logo} />
           </FlexBox>
         </FlexBox>
+        <HamburgerMenu />
       </FlexBox>
       <main>
         <h2>Title</h2>
