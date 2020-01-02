@@ -36,11 +36,11 @@ export const logout = () => dispatch => {
 };
 
 /* EMAIL LOGIN ACTION */
-export const login = (email, password) => dispatch => {
+export const login = data => dispatch => {
   dispatch({ type: LOGIN_START });
   firebase
     .auth()
-    .signInWithEmailAndPassword(email, password)
+    .signInWithEmailAndPassword(data.email, data.password)
     .then(res => {
       dispatch({ type: LOGIN_SUCCESS });
       console.log("Login response:", res);
@@ -52,21 +52,16 @@ export const login = (email, password) => dispatch => {
 };
 
 /* EMAIL REGISTER ACTION */
-export const register = (
-  first_name,
-  last_name,
-  email,
-  password
-) => dispatch => {
+export const register = data => dispatch => {
   dispatch({ type: REGISTER_START });
   firebase
     .auth()
-    .createUserWithEmailAndPassword(email, password)
+    .createUserWithEmailAndPassword(data.email, data.password)
     .then(res => {
       const newUser = {
         firebase_id: res.user.uid,
         email: res.user.email,
-        displayName: `${first_name} ${last_name}`
+        displayName: `${data.first_name} ${data.last_name}`
       };
       // a commit
       console.log("New user info:", newUser);
