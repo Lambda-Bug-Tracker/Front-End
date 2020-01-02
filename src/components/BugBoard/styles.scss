@@ -1,0 +1,39 @@
+.hamburger-menu-container {
+  position: relative;
+  .hamburger-menu {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: black;
+  }
+}
+
+.header-container {
+  justify-content: flex-start;
+  margin-top: 2rem;
+  font-size: 5rem;
+  color: black;
+
+  h1 {
+    display: none;
+  }
+
+  .logo {
+    display: block;
+  }
+}
+
+.bug-board-container {
+  background-color: #bb1333;
+  color: white;
+}
+
+.top-container {
+  background-color: white;
+}
+
+main {
+  h2 {
+    text-align: center;
+  }
+}

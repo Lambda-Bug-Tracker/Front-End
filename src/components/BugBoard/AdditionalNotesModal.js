@@ -1,0 +1,7 @@
+/*conditional renders if you want to add edit or delete
+
+otherwise renders all notes
+
+all users can add a note
+
+user that created note or the project admin can edit and delete bug populates with data*/
