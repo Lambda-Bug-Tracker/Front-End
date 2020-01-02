@@ -94,7 +94,7 @@ export default function Register() {
           <Button type="submit">Register</Button>
           {error && <div className="error">{error}</div>}
         </Form>
-      )}
+      }
     </Container>
   );
 }

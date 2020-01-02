@@ -1,6 +1,6 @@
 import { UPDATE_BUGSTOSQUASH, UPDATE_SQUASHING, UPDATE_REVIEW, UPDATE_SQUASHED } from '../actions/projectBugs'
 
-initialState = {
+const initialState = {
     bugsToSquash:[],
     squashing:[],
     review:[],
