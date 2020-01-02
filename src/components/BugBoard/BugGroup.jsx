@@ -2,7 +2,7 @@ import React from "react";
 
 const BugGroup = () => {
   return (
-    <div>
+    <div className="bug-group-container">
       <div className="bug-group">
         <h4>Bugs To Squash</h4>
       </div>

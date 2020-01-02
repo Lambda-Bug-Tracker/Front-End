@@ -3,17 +3,20 @@
 import React from "react";
 import BugGroup from "./BugGroup.jsx";
 import Logo from "../../images/logo.png";
+import HamburgerMenu from "../../images/hamburger-menu.png";
+import "./styles.scss";
+import { Wrapper } from "bushido-strap";
 
 const BugBoard = () => {
   return (
-    <div>
+    <Wrapper>
       <header>
         <div className="title">
           <h1>Lambda Bug Tracker</h1>
-          <img alt="hamburger-menu" src={Logo} />
+          <img alt="logo" src={Logo} />
         </div>
-        <div className="hamburger-menu">
-          <img alt="hamburger-menu" src={Logo} />
+        <div className="hamburger-menu-1">
+          <img alt="hamburger-menu" src="{HamburgerMenu}" />
         </div>
       </header>
       <main>
@@ -22,7 +25,7 @@ const BugBoard = () => {
           <BugGroup />
         </div>
       </main>
-    </div>
+    </Wrapper>
   );
 };
 
