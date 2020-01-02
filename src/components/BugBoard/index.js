@@ -7,8 +7,12 @@ import HamburgerMenu from "../../images/black-hamburger-menu.png";
 import "./styles.scss";
 import { Wrapper, FlexBox } from "bushido-strap";
 
+import UserBar from "../UserBar"
+
 const BugBoard = () => {
   return (
+    <>
+    <UserBar />
     <Wrapper className="bug-board-container">
       <FlexBox className="top-container" justify-content="center" width="100%">
         <FlexBox className="header-container" width="100%">
@@ -36,6 +40,7 @@ const BugBoard = () => {
         </div>
       </main>
     </Wrapper>
+    </>
   );
 };
 
