@@ -44,7 +44,7 @@ export default function Register() {
   const history = useHistory();
 
   const [isLoading, setIsLoading] = useState(false)
-  const [error, setError] = useState(true)
+  const [error, setError] = useState()
   const [data, setData] = useState({
     first_name: "",
     last_name: "",
