@@ -20,11 +20,12 @@ import Dashboard from "./components/Dashboard";
 import { BugModal } from "./components/BugBoard/BugModal";
 
 const App = () => {
+  
   return (
     <DndProvider backend={Backend}>
       <AppWrapper>
         <PrivateRoute path="/" exact component={Dashboard} />
-        <Route path="/project" component={BugBoard} />
+        <Route path="/project/:id" component={BugBoard} />
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
 

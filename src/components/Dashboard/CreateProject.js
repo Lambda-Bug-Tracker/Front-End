@@ -50,16 +50,13 @@ export default function CreateProject (props) {
         name: '',
         description: '',
 
-<<<<<<< HEAD
     })
     const firebase = useSelector(state => state.firebase)
-=======
     const handleCancel = e => {
         e.preventDefault()
         props.setIsCreating(false)
     }
 
->>>>>>> master
     const handleSubmit = e => {
         e.preventDefault()
         axios.post(`https://lambda-bug-tracker.herokuapp.com/projects/${firebase.auth.uid}`, form)
@@ -75,7 +72,6 @@ export default function CreateProject (props) {
         <FormContainer>
             <div className='cancel' onClick={handleCancel}>X</div>
         <Form onSubmit={handleSubmit}>
-<<<<<<< HEAD
             <Input 
                 name='name' 
                 placeholder="Project Title"
@@ -92,10 +88,6 @@ export default function CreateProject (props) {
                 />
             {/* <Input name='title' placeholder="Something else..."/> */}
             <Button type='submit'>Save</Button>
-=======
-            <Input name='title' placeholder="Project Title"/>
-            <button type='submit'>Save</button>
->>>>>>> master
         </Form>
         </FormContainer>
     )
