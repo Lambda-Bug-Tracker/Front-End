@@ -1,4 +1,5 @@
 import React from "react";
+import Profile from './profile';
 
 import '../../assets/css/landing.css';
 import lambdaBanner from '../../assets/img/lambda-banner.png'
@@ -13,6 +14,44 @@ import jimmy from '../../assets/img/jimmy.png';
 import joscelyn from '../../assets/img/joscelyn.png';
 import tommy from '../../assets/img/tommy.png';
 import robert from '../../assets/img/robert.png';
+
+const team1 = [
+  {
+    image: chris,
+    name: 'Christopher Adams'
+  },
+  {
+    image: joscelyn,
+    name: 'Joscelyn Owen'
+  },
+  {
+    image: emily,
+    name: 'Emily Bruner'
+  },
+  {
+    image: robert,
+    name: 'Robert Gordon'
+  },
+]
+
+const team2 = [
+  {
+    image: aaron,
+    name: 'Aaron Soler'
+  },
+  {
+    image: brianna,
+    name: 'Brianna Keune'
+  },
+  {
+    image: tommy,
+    name: 'Tommy Kindle'
+  },
+  {
+    image: jimmy,
+    name: 'Jimmy McBride'
+  },
+]
 
 export default function LandingPage() {
   return (
@@ -78,16 +117,10 @@ export default function LandingPage() {
       <section className='team'>
         <h2>Our Team</h2>
         <div className='team-row-1'>
-          <img src={chris} alt='chris' />
-          <img src={joscelyn} alt='joscelyn' />
-          <img src={emily} alt='emily' />
-          <img src={robert} alt='robert' />
+          {team1.map(element => <Profile data={element} />)}
         </div>
         <div className='team-row-2'>
-          <img src={aaron} alt='aaron' />
-          <img src={brianna} alt='brianna' />
-          <img src={tommy} alt='tommy' />
-          <img src={jimmy} alt='jimmy' />
+          {team2.map(element => <Profile data={element} />)}
         </div>
       </section>
       <footer>Copyright © 2019 Lambda School - All rights reserved</footer>
