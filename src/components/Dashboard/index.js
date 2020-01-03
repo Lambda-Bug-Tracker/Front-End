@@ -74,11 +74,7 @@ export default function Dashboard(props) {
                   {/* Map over user projects here */}
                   {projects && projects.map((item, index) => {
                     return (
-<<<<<<< HEAD
-                      <Link key={index} project={item} to={`/project/${item.project_id}`}>
-=======
                       <Link key={index} title={item.project_name} to={`/project/${item.project_id}`}>
->>>>>>> 72f0dd6146b738b6456d10b5a8c1fc7e6a7fa5c2
                         <ProjectCard className="project-card">
                           <h3>{item.project_name}</h3>
                           <p>{item.description}</p>
