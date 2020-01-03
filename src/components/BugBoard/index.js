@@ -15,7 +15,6 @@ import { Wrapper, FlexBox } from "bushido-strap";
 import UserBar from "../UserBar";
 
 const BugBoard = ({ history }) => {
-  console.log("************", history, "******************")
   const { id } = useParams();
   const [addingNewBug, setAddingNewBug] = useState(false);
   const dispatch = useDispatch();
