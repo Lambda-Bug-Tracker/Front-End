@@ -1,14 +1,18 @@
-import React from "react";
-import { FlexBox, Wrapper } from "bushido-strap";
+import React, { useState } from "react";
 import Burger from "@animated-burgers/burger-arrow";
 import "./menu-styles.styles.scss";
 
 import "@animated-burgers/burger-arrow/dist/styles.css";
 // tryign to use this library: https://march08.github.io/animated-burgers/
 const HamburgerMenu = () => {
+  const [openStatus, setOpenStatus] = useState(false);
+  const handleClick = () => {
+    console.log("clicked");
+    setOpenStatus(!openStatus);
+  };
   return (
     <div className="background-black">
-      <Burger />
+      <Burger onClick={() => handleClick()} isOpen={openStatus} />
     </div>
   );
 };
