@@ -22,7 +22,7 @@ const FormContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: -150px;
+    /* margin-top: -150px; */
     @media screen and (max-width: 768px) {
         margin-top: 50px;
     }

@@ -20,57 +20,49 @@ $phone: "(min-width: 320px) and (max-width: 768px)";
 .bug-board-container {
   background-color: #ffffff;
   color: white;
-  flex-direction: row;
-  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 99vw;
   height: 100vh;
-
   .sidebar-container {
     @media #{$phone} {
       display: none;
     }
   }
   .right-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-direction: center;
     width: 100%;
     height: 100%;
-
     @media #{$phone} {
       overflow-x: hidden;
     }
   }
   .top-container {
-    background-color: white;
-    overflow: hidden;
-
-    @media #{$phone} {
-      max-width: 100%;
-      overflow: hidden;
+    display: flex;
+    justify-content: center;
+    margin: 15px 0;
+    font-size: 5rem;
+    color: black;
+    h1 {
+      color: #202020;
+      font-family: "Montserrat", sans-serif;
+      font-size: 18px;
+      align-self: center;
+  
+      @media #{$desktop} {
+        display: flex;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: bold;
+      }
     }
-    .header-container {
-      justify-content: center;
-      margin: 15px 0;
-      font-size: 5rem;
-      color: black;
-      max-width: 100%;
-
-      h1 {
-        color: #202020;
-        font-family: "Montserrat", sans-serif;
-        font-size: 18px;
-        align-self: center;
-
-        @media #{$desktop} {
-          display: flex;
-          font-size: 24px;
-          font-style: normal;
-          font-weight: bold;
-        }
-      }
-      .logo {
-        display: block;
-        width: 50px;
-        margin-top: -12px;
-        align-self: center;
-      }
+    .logo {
+      width: 50px;
+      align-self: center;
     }
   }
 
@@ -88,36 +80,6 @@ $phone: "(min-width: 320px) and (max-width: 768px)";
       background: #bb1333;
       border: 0;
       cursor: pointer;
-    }
-  }
-
-  main {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    @media #{$phone} {
-      display: block;
-      background-color: #14131c;
-      text-align: center;
-      height: 150vh;
-      width: 100vw;
-      margin-top: -25%;
-    }
-
-    h2 {
-      text-align: left;
-      color: #14131c;
-      font-family: "Montserrat", sans-serif;
-      padding: 20px;
-
-      @media #{$phone} {
-        color: #ffffff;
-        text-align: center;
-      }
     }
   }
 }
