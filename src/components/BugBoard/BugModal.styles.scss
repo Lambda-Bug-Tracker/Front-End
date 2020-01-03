@@ -1,0 +1,42 @@
+.modal-card {
+  width: 500px;
+  background: white;
+  border: 1px solid #ccc;
+
+  .bug-description{
+      text-align: center;
+      margin-top: 15px;
+  }
+
+  .bug-notes{
+    text-align: left;
+
+    h4{
+        font-size: 1.8rem;
+        font-weight: 700;
+     margin-bottom: 5px;
+    }
+  }
+
+  .addnote-input{
+    height: 100px;
+  }
+
+  }
+
+
+.modal-title {
+    border-bottom: 1px solid #ccc;
+    padding: 1rem;
+    margin: 0;
+        
+}
+
+.button-container {
+    background-color: gray;
+    padding: 10px;
+}
+
+
+
+
