@@ -62,10 +62,9 @@ export default function LandingPage() {
           <nav>
             <a href='#'><img src={lambdaBanner} alt='lambda school logo'/></a>
             <ul>
-              <li><a href='#'>Home</a></li>
-              <li><a href='#'>Features</a></li>
-              <li><a href='#'>About</a></li>
-              <li><a href='#'>Team</a></li>
+              <li><a href='#features'>Features</a></li>
+              <li><a href='#about'>About</a></li>
+              <li><a href='#team'>Team</a></li>
             </ul>
             <div className='auth'>
               <Link className='register' to='/register'>Register</Link>
@@ -85,7 +84,7 @@ export default function LandingPage() {
           <polygon points="0 0,100 0,100 100,0 100" />
         </svg>
       </header>
-      <section className='about-features'>
+      <section id='features' className='about-features'>
         <div className='row'>
           <div className='text-container'>
             <h2>Organized Solutions</h2>
@@ -109,7 +108,7 @@ export default function LandingPage() {
             </div>
           </div>
           <div className='about-container'>
-            <div className='about-info'>
+            <div id='about' className='about-info'>
               <h2>About Bug Tracker</h2>
               <p>Bug tracker was built to help teams maintain an effective workflow when dealing with pesky bugs. Develop with confidence as you identify problems and collaborate with your team to get features in working order.</p>
               <a href='/login'>Get started</a>
@@ -118,7 +117,7 @@ export default function LandingPage() {
           </div>
         </div>
       </section>
-      <section className='team'>
+      <section id='team' className='team'>
         <h2>Our Team</h2>
         <div className='team-row-1'>
           {team1.map(element => <Profile data={element} />)}
