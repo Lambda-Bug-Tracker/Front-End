@@ -19,7 +19,7 @@ const allowDrop = (input) => {
     }
 }
 
-const Column1 = () => {
+const Column1 = (props) => {
 const data = useSelector(state => state.projectBugs)
 const dispatch = useDispatch()
 console.log(data)
@@ -44,7 +44,7 @@ return (
         <h4 className="progressh4">Bugs To Squash</h4>
          <div className="progress-column" ref={drop}>
             {data.bugsToSquash.map((item, index) => {
-                return <BugCard item={item} key={index} />
+                return <BugCard {...props} item={item} key={index} />
             })}
         </div>
     </div>

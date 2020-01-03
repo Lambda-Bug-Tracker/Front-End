@@ -5,7 +5,7 @@
 /*on click -- brings up modal of notes*/
 
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useRouteMatch } from "react-router-dom";
 
 import { useDrag } from "react-dnd";
 
@@ -16,6 +16,7 @@ import bee from "../../images/b.png";
 
 import './BugModal.styles.scss';
 import axios from "axios";
+import { BugModal } from "./BugModal";
 
 const priorityTest = 3;
 const typeTest = 3;
@@ -34,6 +35,8 @@ export function BugCard(props) {
     //   axios.delete(`https://lambda-bug-tracker.herokuapp.com/bugs/${id}`)
   }
 
+
+  console.log("****************: ", props)
   return (
     <Link to={`/bug-modal/${props.item.id}`}>
       <Card
@@ -67,6 +70,7 @@ export function BugCard(props) {
                     : null
                 }
                 style={{ width: "20%" }}
+                alt="bug to match key"
             />
             <span className="bugname">{props.item.bug_name}</span>
             </div>

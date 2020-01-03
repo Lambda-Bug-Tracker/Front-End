@@ -27,7 +27,7 @@ const App = () => {
       <AppWrapper>
         <Switch>
           <PrivateRoute path="/project/:id" component={BugBoard} />
-          <PrivateRoute path="/bug-modal/:id" component={BugModal} />
+          {/* <PrivateRoute path="/bug-modal/:id" component={BugModal} /> */}
         </Switch>
         <PrivateRoute exact path="/" component={Dashboard} />
 

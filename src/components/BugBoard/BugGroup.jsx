@@ -42,14 +42,14 @@ const Container = styled.div`
   }
 `
 
-const BugGroup = () => {
+const BugGroup = (props) => {
   
   return (
     <Wrapper>
       <div className="bug-group-container">
           <Container className="mobile-conainter">
             <div className="one">
-              <Column1 />
+              <Column1 {...props}/>
             </div>
             <div className="two">
               <Column2 />

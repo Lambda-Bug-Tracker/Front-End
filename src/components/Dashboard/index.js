@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Link, Route } from "react-router-dom";
-import { Wrapper, Button } from "bushido-strap";
+import { Link} from "react-router-dom";
+import { Wrapper} from "bushido-strap";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../store/actions/auth";
 import axios from "axios";
@@ -85,7 +85,7 @@ export default function Dashboard(props) {
                       {projects &&
                         projects.map((item, index) => {
                           return (
-                            <ProjectCardLink
+                            <Link
                               key={index}
                               title={item.project_name}
                               to={{
@@ -97,7 +97,7 @@ export default function Dashboard(props) {
                                 <h3>{item.project_name}</h3>
                                 <p>{item.description}</p>
                               </ProjectCard>
-                            </ProjectCardLink>
+                            </Link>
                           );
                         })}
                     </div>
@@ -118,11 +118,5 @@ export default function Dashboard(props) {
         </div>
       </div>
     </Wrapper>
-  );
-}
-
-function ProjectCardLink({ to, ...rest }) {
-  return (
-    <Route path={to} children={({ match }) => <Link to={to} {...rest} />} />
   );
 }
