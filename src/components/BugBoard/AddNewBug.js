@@ -59,8 +59,8 @@ export default function AddNewBug (props) {
     const [form, setForm] = useState({
         name: '',
         description: '',
-        priority_tag: '',
-        hash_tag: '',
+        priority_tag: 1,
+        hash_tag: 1,
     })
 
     const handleChange = e => {
@@ -68,6 +68,14 @@ export default function AddNewBug (props) {
         setForm({
             ...form,
             [e.target.name]:e.target.value
+        })
+    }
+
+    const handleSelectChange = e => {
+        e.preventDefault()
+        setForm({
+            ...form,
+            [e.target.name]:Number(e.target.value)
         })
     }
 
@@ -95,13 +103,13 @@ export default function AddNewBug (props) {
             <Input name='name' placeholder="Bug Title" onChange={handleChange}/>
             <Input name='description' placeholder="Bug Description" onChange={handleChange}/>
             <label>Priority:</label>
-            <select value={form.priority_tag} name='priority_tag' onChange={handleChange}>
+            <select value={form.priority_tag} name='priority_tag' onChange={handleSelectChange}>
                 <option value='1'>Low</option>
                 <option value='2'>Medium</option>
                 <option value='3'>High</option>
             </select>
             <label>Category:</label>
-            <select value={form.hash_tag} name='hash_tag' onChange={handleChange}>
+            <select value={form.hash_tag} name='hash_tag' onChange={handleSelectChange}>
                 <option value='1'>Front End</option>
                 <option value='2'>Back End</option>
                 <option value='3'>UI/UX</option>
