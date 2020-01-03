@@ -7,7 +7,7 @@ import { BugCard } from '../BugCard';
 
 const allowDrop = (input) => {
     console.log(input)
-    if(input.item.bugState === 3){
+    if(input.item.progress_tag === 3){
         return false
     }else{
         return true
@@ -32,9 +32,9 @@ const Column3 = () => {
     <div className="bug-group">
         <h4 className="progressh4">For Review</h4>
         <div className="progress-column" ref={drop}>
-            {/* {data.review.map((item, index) => {
+            {data.review.map((item, index) => {
                 return <BugCard item={item} key={index} />
-            })} */}
+            })}
         </div>
     </div>
 )

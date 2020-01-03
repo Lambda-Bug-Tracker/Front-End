@@ -9,7 +9,7 @@ import { BugCard } from '../BugCard'
 import '../BugGroup.styles.scss';
 const allowDrop = (input) => {
     console.log(input)
-    if(input.item.bugState === 2){
+    if(input.item.progress_tag === 2){
         return false
     }else{
         return true
@@ -34,9 +34,9 @@ const Column2 = () => {
     <div className="bug-group">
         <h4 className="progressh4">Currently Squashing</h4>
         <div className="progress-column" ref={drop}>
-            {/* {data.squashing.map((item, index) => {
+            {data.squashing.map((item, index) => {
                 return <BugCard item={item} key={index} />
-            })} */}
+            })}
         </div>
     </div>
 )

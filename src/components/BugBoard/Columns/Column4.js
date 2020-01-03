@@ -7,7 +7,7 @@ import { BugCard } from '../BugCard';
 
 const allowDrop = (input) => {
     console.log(input)
-    if(input.item.bugState === 4){
+    if(input.item.progress_tag === 4){
         return false
     }else{
         return true
@@ -32,9 +32,9 @@ const [{isOver, canDrop}, drop] = useDrop({
     <div className="bug-group">
         <h4 className="progressh4">Squashed</h4>
         <div className="progress-column" ref={drop}>
-            {/* {data.squashed.map((item, index) => {
+            {data.squashed.map((item, index) => {
                 return <BugCard item={item} key={index} />
-            })} */}
+            })}
         </div>
      </div>
 )

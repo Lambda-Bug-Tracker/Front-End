@@ -12,7 +12,10 @@ export const projectBugs = (state = initialState, action) => {
         case UPDATE_BUGS :
             return {
                 ...state,
-                bugsToSquash: action.payload.bugs
+                bugsToSquash: action.payload.bugs.filter(item => item.progress_tag === 1),
+                squashing: action.payload.bugs.filter(item => item.progress_tag === 2),
+                review: action.payload.bugs.filter(item => item.progress_tag === 3),
+                squashed: action.payload.bugs.filter(item => item.progress_tag === 4)
             }
         case UPDATE_BUGSTOSQUASH :
             return {
