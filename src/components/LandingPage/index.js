@@ -15,7 +15,6 @@ import jimmy from "../../assets/img/jimmy.png";
 import joscelyn from "../../assets/img/joscelyn.png";
 import tommy from "../../assets/img/tommy.png";
 import robert from "../../assets/img/robert.png";
-import { Link } from "react-router-dom";
 
 const team1 = [
   {
