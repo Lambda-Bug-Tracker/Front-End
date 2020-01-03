@@ -44,7 +44,7 @@ const HamburgerMenu = () => {
             <Link to="/login">Login</Link>
             <Link to="/register">Register</Link>
             <button className="sign-out-btn" onClick={handleSignOut}>
-              Sign Out
+              Logout
             </button>
           </div>
         ) : (
