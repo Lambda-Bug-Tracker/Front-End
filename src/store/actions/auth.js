@@ -60,8 +60,8 @@ export const emailRegistration = data => dispatch => {
     .then(res => {
       const newUser = {
         firebase_id: res.user.uid,
-        email: res.user.email,
-        displayName: `${data.first_name} ${data.last_name}`
+        display_name: `${data.first_name} ${data.last_name}`,
+        email: res.user.email
       };
       // a commit
       console.log("New user info:", newUser);
@@ -140,8 +140,8 @@ export const googleRegister = () => dispatch => {
       // const auth = { Authorization: `Bearer: ${token}` };
       const newUser = {
         firebase_id: res.user.uid,
-        email: res.user.email,
-        displayName: res.user.displayName
+        display_name: res.user.displayName,
+        email: res.user.email
       };
       // a commit
       console.log("New user info:", newUser);
