@@ -39,7 +39,7 @@ export default function Register() {
   });
 
   const onSubmit = e => {
-    e.preventDefault();
+    // e.preventDefault();
     const data = getValues()
     dispatch(emailRegistration(data));
   };
@@ -47,7 +47,8 @@ export default function Register() {
   const handleGoogleAuth = e => {
     e.preventDefault();
     const data = getValues()
-    dispatch(googleRegister(data));
+    console.log('$&^%', data)
+    dispatch(googleRegister());
   };
 
   if (isLoggedIn) return <Redirect to="/" />;
