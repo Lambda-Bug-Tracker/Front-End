@@ -36,15 +36,17 @@ export default function Register() {
     password: ""
   });
 
-  const { register, handleSubmit, errors } = useForm({
+  const { register, handleSubmit, errors, getValues } = useForm({
     validationSchema: schema
   });
-
+ 
   const handleChange = event => {
-    setData({
-      ...data,
-      [event.target.name]: event.target.value
-    });
+    const values = getValues()
+    console.log(values)
+    // setData({
+    //   ...data,
+    //   [event.target.name]: event.target.value
+    // });
   };
 
   const onSubmit = data => {
@@ -70,7 +72,7 @@ export default function Register() {
             <Input
               type="text"
               name="email"
-              value={data.email}
+              // value={data.email}
               onChange={handleChange}
               placeholder="Email"
               ref={register}
@@ -79,7 +81,7 @@ export default function Register() {
             <Input
               type="password"
               name="password"
-              value={data.password}
+              // value={data.password}
               onChange={handleChange}
               placeholder="Password"
               ref={register}
