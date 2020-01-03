@@ -4,6 +4,7 @@ import {UPDATE_SQUASHED} from '../../../store/actions/projectBugs'
 import { useDrop } from 'react-dnd'
 import '../BugGroup.styles.scss';
 import { BugCard } from '../BugCard';
+import axios from 'axios'
 
 const allowDrop = (input) => {
     console.log(input)
@@ -20,7 +21,12 @@ const dispatch = useDispatch()
 const [{isOver, canDrop}, drop] = useDrop({
     accept: 'CARD',
     drop(item) {
-        dispatch({type: UPDATE_SQUASHED, payload: item})
+        axios.put(`https://lambda-bug-tracker.herokuapp.com/bugs/${item.item.id}`, {progress_tag: 4})
+        .then(res => {
+            console.log(res)
+            dispatch({type: UPDATE_SQUASHED, payload: item})
+        })
+        
     },
     canDrop: (item) => allowDrop(item),
     collect: monitor => ({

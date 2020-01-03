@@ -27,7 +27,12 @@ const [{isOver, canDrop}, drop] = useDrop({
     accept: 'CARD',
     drop(item) {
         console.log(item)
-        dispatch({type: UPDATE_BUGSTOSQUASH, payload: item})
+        axios.put(`https://lambda-bug-tracker.herokuapp.com/bugs/${item.item.id}`, {progress_tag: 1})
+        .then(res => {
+            console.log(res)
+            dispatch({type: UPDATE_BUGSTOSQUASH, payload: item}) 
+        })
+        
     },
     canDrop: (item) => allowDrop(item),
 

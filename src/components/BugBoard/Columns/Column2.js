@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { UPDATE_SQUASHING } from '../../../store/actions/projectBugs'
 import { useDrop } from 'react-dnd'
 import { BugCard } from '../BugCard'
+import axios from 'axios'
 
 
 import '../BugGroup.styles.scss';
@@ -22,7 +23,12 @@ const Column2 = () => {
     const [{isOver, canDrop}, drop] = useDrop({
         accept: 'CARD',
         drop(item) {
+            axios.put(`https://lambda-bug-tracker.herokuapp.com/bugs/${item.item.id}`, {progress_tag: 2})
+        .then(res => {
+            console.log(res)
             dispatch({type:UPDATE_SQUASHING, payload: item})
+        })
+            
         },
         canDrop: (item) => allowDrop(item),
         collect: monitor => ({

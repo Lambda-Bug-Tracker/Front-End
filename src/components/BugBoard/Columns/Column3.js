@@ -4,6 +4,7 @@ import { UPDATE_REVIEW } from '../../../store/actions/projectBugs'
 import { useDrop } from 'react-dnd'
 import '../BugGroup.styles.scss';
 import { BugCard } from '../BugCard';
+import axios from 'axios'
 
 const allowDrop = (input) => {
     console.log(input)
@@ -20,7 +21,12 @@ const Column3 = () => {
     const [{isOver, canDrop}, drop] = useDrop({
         accept: 'CARD',
         drop(item) {
+            axios.put(`https://lambda-bug-tracker.herokuapp.com/bugs/${item.item.id}`, {progress_tag: 3})
+        .then(res => {
+            console.log(res)
             dispatch({type:UPDATE_REVIEW, payload: item})
+        })
+            
         },
         canDrop: (item) => allowDrop(item),
         collect: monitor => ({
