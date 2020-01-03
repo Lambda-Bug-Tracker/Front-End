@@ -52,6 +52,8 @@ export function BugCard(props) {
         }}
         width="90%"
         align="flex-start"
+        marginLeft="8px"
+        marginTop="20px"
       >
         <div className='delete-btn' onClick={handleDelete}>X</div>
         <div className='bug-card-wrapper'>
