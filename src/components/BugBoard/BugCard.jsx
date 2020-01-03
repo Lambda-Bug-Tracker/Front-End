@@ -58,7 +58,6 @@ export function BugCard(props) {
           <span className="bugname"> {props.item.bug_name} </span>
         </div>
 
-        <p className="bug-description"> {props.item.description} </p>
         <h5>
           {props.item.priority_tag === 1 && "!"}
           {props.item.priority_tag === 2 && "!!"}
