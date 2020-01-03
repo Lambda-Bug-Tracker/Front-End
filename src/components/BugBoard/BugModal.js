@@ -3,7 +3,7 @@ admins can edit and delete bug
 populates with data*/
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router';
-import { Card, Form, Input } from 'bushido-strap'
+import { Card, Form, Input, Wrapper } from 'bushido-strap'
 import './BugModal.styles.scss';
 import axios from 'axios';
 
@@ -54,6 +54,7 @@ export function BugModal() {
     }
     
     return(
+        <Wrapper>
         <Card className='modal-card'>
             {!form.isAdmin &&
                 <div>
@@ -140,5 +141,6 @@ export function BugModal() {
                         
             </Form>  
         </Card>
+        </Wrapper>
     )
 }
