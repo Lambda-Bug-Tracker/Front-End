@@ -1,10 +1,11 @@
 /* All users can add a bug
 admins can edit and delete bug
 populates with data*/
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router';
 import { Card, Form, Input } from 'bushido-strap'
 import './BugModal.styles.scss';
+import axios from 'axios';
 
 
 export function BugModal() {
@@ -22,12 +23,18 @@ export function BugModal() {
         bugType: 1
 
     })
+    useEffect(() => {
+        axios.get(`https://lambda-bug-tracker.herokuapp.com/bugs/specific/${id}`)
+        .then(res => {
+            console.log(res)
+        })
+        .catch(err => console.log(err))
+    }, [])
     const handleSubmit = (e) => {
         e.preventDefault()
 
     }
-    console.log(form)
-    console.log(bug)
+    
     return(
         <Card className='modal-card'>
             {!form.isAdmin &&
