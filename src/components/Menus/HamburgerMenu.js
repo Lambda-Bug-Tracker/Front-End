@@ -12,18 +12,21 @@ import { useDispatch } from "react-redux";
 import { logout } from "../../store/actions/auth";
 // trying to use this library: https://march08.github.io/animated-burgers/
 
+import { useHistory } from "react-router";
+
 const HamburgerMenu = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const [openStatus, setOpenStatus] = useState(false);
   const handleClick = () => {
     setOpenStatus(!openStatus);
     console.log(openStatus, "openStatus");
-    //closeNav()
   };
 
   function handleSignOut() {
     dispatch(logout());
+    history.push("/");
   }
 
   return (
