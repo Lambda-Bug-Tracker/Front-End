@@ -34,7 +34,7 @@ const BugBoard = ({ history }) => {
   };
 
   return (
-    <Wrapper className="bug-board-container" width="100%">
+    <Wrapper className="bug-board-container" width="100%" direction='row'>
       <FlexBox className="sidebar-container">
         <UserBar />
       </FlexBox>
