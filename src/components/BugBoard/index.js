@@ -56,7 +56,10 @@ const BugBoard = ({ history }) => {
           ) : (
             <>
               <div className="title-container">
-          <h2>{history.location.state.project_name}</h2>
+                <h2>
+                  {history.location.state &&
+                    history.location.state.project_name}
+                </h2>
                 <button onClick={handleAddNewBug}>Add New Bug</button>
               </div>
               <div className="bug-group-container">
