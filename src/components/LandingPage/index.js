@@ -75,7 +75,7 @@ export default function LandingPage() {
             <div className='hero-title'>
               <h1>Bug Tracker</h1>
               <p>Keep track of those pesky bugs as you <br/> collaborate with your team.</p>
-              <a href='#'>Get started</a>
+              <a href='/login'>Get started</a>
             </div>
             <img src={bugFixing} alt='bug fixing'/>
           </div>
@@ -111,7 +111,7 @@ export default function LandingPage() {
             <div className='about-info'>
               <h2>About Bug Tracker</h2>
               <p>Bug tracker was built to help teams maintain an effective workflow when dealing with pesky bugs. Develop with confidence as you identify problems and collaborate with your team to get features in working order.</p>
-              <a href='#'>Get started</a>
+              <a href='/login'>Get started</a>
             </div>
             <img src={devActivity} alt='github activity' />
           </div>
