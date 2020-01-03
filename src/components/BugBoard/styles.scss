@@ -7,7 +7,6 @@ $phone: "(min-width: 320px) and (max-width: 768px)";
   font-size: 5rem;
   color: black;
 
-
   h1 {
     display: none;
     color: #202020;
@@ -33,17 +32,12 @@ $phone: "(min-width: 320px) and (max-width: 768px)";
   width: 100%;
   height: 100%;
 
-
   .right-container {
     width: 100%;
-    
-
-    
   }
 
   .top-container {
     background-color: white;
-    
   }
 
   .sidebar-container {
@@ -54,13 +48,11 @@ $phone: "(min-width: 320px) and (max-width: 768px)";
 
   main {
     width: 100%;
-    
 
     @media #{$phone} {
       display: flex;
       justify-content: center;
-      background-color: #14131C;
-      
+      background-color: #14131c;
     }
   }
   h2 {
@@ -70,13 +62,14 @@ $phone: "(min-width: 320px) and (max-width: 768px)";
     font-family: "Montserrat", sans-serif;
 
     @media #{$phone} {
-      color: #FFFFFF;
-      
+      color: #ffffff;
     }
-   
   }
 }
 
+.open {
+  color: black;
+}
 /* The side navigation menu */
 .sidenav {
   height: 100%; /* 100% Full-height */
