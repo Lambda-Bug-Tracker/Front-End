@@ -21,8 +21,16 @@ const FormContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    .cancel{
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 5px;
+        cursor: pointer;
+    }
     input{
-        margin-top: 10px;
+        margin-top: 20px;
     }
     button{
         width: 150px;
@@ -37,6 +45,11 @@ const FormContainer = styled.div`
 
 export default function CreateProject (props) {
 
+    const handleCancel = e => {
+        e.preventDefault()
+        props.setIsCreating(false)
+    }
+
     const handleSubmit = e => {
         e.preventDefault()
         props.setIsCreating(false)
@@ -44,6 +57,7 @@ export default function CreateProject (props) {
 
     return(
         <FormContainer>
+            <div className='cancel' onClick={handleCancel}>X</div>
         <Form onSubmit={handleSubmit}>
             <Input name='title' placeholder="Project Title"/>
             <button type='submit'>Save</button>
