@@ -1,9 +1,9 @@
-import React from 'react'
-import axios from 'axios'
+import React, {useState} from 'react'
 import styled, { keyframes } from "styled-components";
 import {slideInUp} from "react-animations";
-
-import { Form, Input, Button } from "bushido-strap";
+import { useSelector } from 'react-redux'
+import { Form, Input } from "bushido-strap";
+import axios from 'axios'
 
 const slideAnim = keyframes`${slideInUp}`
 
@@ -38,6 +38,11 @@ const FormContainer = styled.div`
     input{
         margin-top: 20px;
     }
+    label{
+        color: black;
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
     button{
         width: 150px;
         margin: 15px auto;
@@ -51,6 +56,21 @@ const FormContainer = styled.div`
 
 export default function AddNewBug (props) {
 
+    const [form, setForm] = useState({
+        name: '',
+        description: '',
+        priority_tag: '',
+        hash_tag: '',
+    })
+
+    const handleChange = e => {
+        e.preventDefault()
+        setForm({
+            ...form,
+            [e.target.name]:e.target.value
+        })
+    }
+
     const handleCancel = e => {
         e.preventDefault()
         props.setAddingNewBug(false)
@@ -58,16 +78,28 @@ export default function AddNewBug (props) {
 
     const handleSubmit = e => {
         e.preventDefault()
-        props.setAddingNewBug(false)
+        console.log(form)
+        // props.setAddingNewBug(false)
     }
 
     return(
         <FormContainer>
         <div className='cancel' onClick={handleCancel}>X</div>
         <Form onSubmit={handleSubmit}>
-            <Input name='title' placeholder="Bug Title"/>
-            <Input name='title' placeholder="Bug Name"/>
-            <Input name='title' placeholder="Something else..."/>
+            <Input name='name' placeholder="Bug Title" onChange={handleChange}/>
+            <Input name='description' placeholder="Bug Description" onChange={handleChange}/>
+            <label>Priority:</label>
+            <select value={form.priority_tag} name='priority_tag' onChange={handleChange}>
+                <option value='1'>Low</option>
+                <option value='2'>Medium</option>
+                <option value='3'>High</option>
+            </select>
+            <label>Category:</label>
+            <select value={form.hash_tag} name='hash_tag' onChange={handleChange}>
+                <option value='1'>Front End</option>
+                <option value='2'>Back End</option>
+                <option value='3'>UI/UX</option>
+            </select>
             <button type='submit'>Save</button>
         </Form>
         </FormContainer>
