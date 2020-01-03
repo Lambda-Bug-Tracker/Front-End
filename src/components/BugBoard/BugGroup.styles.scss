@@ -1,6 +1,5 @@
 $phone: "(min-width: 320px) and (max-width: 768px)";
 
-
 .bug-group-container {
   width: 100%;
  
@@ -16,7 +15,7 @@ $phone: "(min-width: 320px) and (max-width: 768px)";
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-right: 3%;
+  margin: 3%;
   
  
 
@@ -65,5 +64,7 @@ $phone: "(min-width: 320px) and (max-width: 768px)";
   @media #{$phone} {
     display: flex;
     flex-direction: column;
+    overflow: hidden;
+    
   }
 }
