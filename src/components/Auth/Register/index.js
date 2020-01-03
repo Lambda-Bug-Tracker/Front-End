@@ -60,7 +60,7 @@ export default function Register() {
     <div className="main">
       <div className="dashboard">
         <div className='top-row'>
-            <img src={lambdaBanner} alt="Lambda School Logo" />
+        <a href="/"><img src={lambdaBanner} alt="Lambda School Logo" /></a>
         </div>
         <div className="title">Register for Lambda Bugtracker</div>
           { isLoading ? <Loading /> : 
