@@ -39,6 +39,7 @@ export default function Register() {
   });
 
   const onSubmit = e => {
+    e.preventDefault();
     const data = getValues()
     dispatch(emailRegistration(data));
   };

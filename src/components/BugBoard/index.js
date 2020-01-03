@@ -31,6 +31,7 @@ const BugBoard = () => {
         </FlexBox>
         <main>
           <h2>Title</h2>
+          <button>Add New Bug</button>
           <div className="bug-group-container">
             <BugGroup />
           </div>
