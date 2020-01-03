@@ -50,7 +50,7 @@
   fill: #fff;
   height: 200vh;
   width: 65%;
-  transform: translateX(-50%) translateY(-70%) rotate(15deg) scale(1.75);
+  transform: translateX(-50%) translateY(-70%) rotate(10deg) scale(1.75);
   z-index: -1;
 }
 .landing header nav {
@@ -58,6 +58,13 @@
   display: flex;
   z-index: 100;
   position: relative;
+}
+.landing header nav .auth {
+  margin-left: auto;
+  display: flex;
+}
+.landing header nav .auth * {
+  padding: 8px 16px;
 }
 .landing header nav img {
   align-self: center;
@@ -73,6 +80,9 @@
 }
 .landing header nav ul a {
   padding: 8px 16px;
+}
+.landing header nav .register {
+  color: #fff;
 }
 .landing header nav .login {
   margin-left: auto;
@@ -104,7 +114,7 @@
 }
 .landing header .hero img {
   width: 50%;
-  margin-left: 10%;
+  margin-left: 8%;
 }
 .landing .about-features {
   background: #14131c;

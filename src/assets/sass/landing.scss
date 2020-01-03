@@ -63,7 +63,7 @@
       fill: #fff;
       height: 200vh;
       width: 65%;
-      transform: translateX(-50%) translateY(-70%) rotate(15deg) scale(1.75);
+      transform: translateX(-50%) translateY(-70%) rotate(10deg) scale(1.75);
       z-index: -1;
     }
 
@@ -72,6 +72,15 @@
       display: flex;
       z-index: 100;
       position: relative;
+
+      .auth {
+        margin-left: auto;
+        display: flex;
+
+        * {
+          padding: 8px 16px;
+        }
+      }
 
       img {
         align-self: center;
@@ -91,6 +100,10 @@
         }
       }
 
+      .register {
+        color: #fff;
+      }
+      
       .login {
         margin-left: auto;
         color: #fff;
@@ -126,7 +139,7 @@
 
       img {
         width: 50%;
-        margin-left: 10%;
+        margin-left: 8%;
       }
     }
   }
