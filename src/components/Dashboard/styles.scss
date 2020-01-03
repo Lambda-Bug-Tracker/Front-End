@@ -32,6 +32,7 @@ $phone: "(min-width: 320px) and (max-width: 768px)";
 
   .top-row {
     position: absolute;
+    max-width: 1200px;
     width: 94%;
     top: 0;
     margin-top: 10px;
@@ -113,15 +114,13 @@ $phone: "(min-width: 320px) and (max-width: 768px)";
     border: 0;
     cursor: pointer;
   }
+  #sign-out-btn{
+    background: #14131c;
+  }
 
   .project-card {
     background: #14131c;
     color: #acb2cc;
     cursor: pointer;
   }
-}
-
-.row {
-  max-width: 1200px;
-  margin: 0 auto;
 }
