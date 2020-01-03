@@ -20,14 +20,17 @@ export default function UserBar() {
       <FlexBox className="user-list" justify-content="center" width="90%">
         <FlexBox className="admin-list">
           <h4>Admin</h4>
-          <p>Lucy</p>
+          <p>Jimmy</p>
         </FlexBox>
         <FlexBox className="dev-list">
           <h4>Devs</h4>
-          <p>Karen</p>
-          <p>David</p>
-          <p>Jennifer</p>
-          <p>John</p>
+          <p>Chris</p>
+          <p>Brianna</p>
+          <p>Joscelyn</p>
+          <p>Emily</p>
+          <p>Tommy</p>
+          <p>Aaron</p>
+          <p>Robert</p>
         </FlexBox>
         <FlexBox className="key-list">
           <h4>Key</h4>
