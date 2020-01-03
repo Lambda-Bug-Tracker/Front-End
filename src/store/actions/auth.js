@@ -59,9 +59,9 @@ export const emailRegistration = data => dispatch => {
     .createUserWithEmailAndPassword(data.email, data.password)
     .then(res => {
       const newUser = {
-        firebase_id: res.user.uid,
-        email: res.user.email,
-        display_name: `${data.first_name} ${data.last_name}`
+        "firebase_id": res.user.uid,
+        "email": res.user.email,
+        "display_name": `${data.first_name} ${data.last_name}`
       };
       // a commit
       console.log("New user info:", newUser);
@@ -139,9 +139,9 @@ export const googleRegister = () => dispatch => {
       console.log("Token:", token);
       // const auth = { Authorization: `Bearer: ${token}` };
       const newUser = {
-        firebase_id: res.user.uid,
-        email: res.user.email,
-        display_name: res.user.displayName
+        "firebase_id": res.user.uid,
+        "email": res.user.email,
+        "display_name": res.user.displayName
       };
       // a commit
       console.log("New user info:", newUser);
