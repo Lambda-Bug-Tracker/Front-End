@@ -1,10 +1,10 @@
 /* holds -- state of bugs of that project and drag and drop. renders: state columns bug cards*/
 
 import React, { useState, useEffect } from "react";
-import { useParams } from 'react-router'
-import axios from 'axios'
-import { useDispatch } from 'react-redux'
-import { UPDATE_BUGS} from '../../store/actions/projectBugs'
+import { useParams } from "react-router";
+import axios from "axios";
+import { useDispatch } from "react-redux";
+import { UPDATE_BUGS } from "../../store/actions/projectBugs";
 import BugGroup from "./BugGroup.jsx";
 import AddNewBug from "./AddNewBug";
 import Logo from "../../images/tilt-left.png";
@@ -14,24 +14,24 @@ import { Wrapper, FlexBox } from "bushido-strap";
 
 import UserBar from "../UserBar";
 
-const BugBoard = () => {
-  const { id } = useParams()
-  const [addingNewBug, setAddingNewBug ] = useState(false)
-  const dispatch = useDispatch()
+const BugBoard = ({ history }) => {
+  const { id } = useParams();
+  const [addingNewBug, setAddingNewBug] = useState(false);
+  const dispatch = useDispatch();
   useEffect(() => {
-    axios.get(`https://lambda-bug-tracker.herokuapp.com/bugs/${id}`)
+    axios
+      .get(`https://lambda-bug-tracker.herokuapp.com/bugs/${id}`)
       .then(res => {
-        console.log(res)
-        dispatch({type: UPDATE_BUGS, payload: res.data})
-       
+        console.log(res);
+        dispatch({ type: UPDATE_BUGS, payload: res.data });
       })
-      .catch(err => console.log(err))
-  }, [addingNewBug])
+      .catch(err => console.log(err));
+  }, [addingNewBug]);
 
   const handleAddNewBug = e => {
     e.preventDefault();
-    setAddingNewBug(true)
-  }
+    setAddingNewBug(true);
+  };
 
   return (
     <Wrapper className="bug-board-container" width="100%">
@@ -39,7 +39,11 @@ const BugBoard = () => {
         <UserBar />
       </FlexBox>
       <div className="right-container">
-        <FlexBox className="top-container" justify-content="center" width="100%">
+        <FlexBox
+          className="top-container"
+          justify-content="center"
+          width="100%"
+        >
           <FlexBox className="header-container" width="100%">
             <h1>Lambda Bug Tracker </h1>
             <img className="logo" alt="logo" src={Logo} />
@@ -47,17 +51,22 @@ const BugBoard = () => {
           <HamburgerMenu />
         </FlexBox>
         <main>
-          {addingNewBug ? <AddNewBug id={id} setAddingNewBug={setAddingNewBug} /> : 
-          <>
-          <div className="title-container">
-            <h2>Title</h2>
-            <button onClick={handleAddNewBug}>Add New Bug</button>
-          </div>
-          <div className="bug-group-container">
-            <BugGroup />
-          </div>
-          </>
-          }
+          {addingNewBug ? (
+            <AddNewBug id={id} setAddingNewBug={setAddingNewBug} />
+          ) : (
+            <>
+              <div className="title-container">
+                <h2>
+                  {history.location.state &&
+                    history.location.state.project_name}
+                </h2>
+                <button onClick={handleAddNewBug}>Add New Bug</button>
+              </div>
+              <div className="bug-group-container">
+                <BugGroup />
+              </div>
+            </>
+          )}
         </main>
       </div>
     </Wrapper>
