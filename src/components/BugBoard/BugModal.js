@@ -10,7 +10,7 @@ export function BugModal() {
     const { id } = useParams();
     const [form, setForm] = useState({
         editNotes: false,
-        isAdmin: true,
+        isAdmin: false,
         addedNote: ''
     })
     const [bug, setBug] = useState({

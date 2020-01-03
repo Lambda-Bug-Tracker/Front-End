@@ -5,8 +5,17 @@ const initialState = {
      id: Math.random(),
     description: 'everything is broken!',
     bugType: 1,
-    priority: 3
-    }],
+    priority: 3,
+    bugState: 1
+    },
+    {name:'Bad Bug 2',
+     id: Math.random(),
+    description: 'everything is broken again!',
+    bugType: 2,
+    priority: 1,
+    bugState: 1
+    }
+],
     squashing:[],
     review:[],
     squashed:[]
@@ -17,7 +26,7 @@ export const projectBugs = (state = initialState, action) => {
         case UPDATE_BUGSTOSQUASH :
             return {
                 ...state,
-                bugsToSquash: [...state.bugsToSquash, action.payload.item],
+                bugsToSquash: [...state.bugsToSquash, {...action.payload.item, bugState: 1}],
                 squashing: state.squashing.filter(item => {
                     return item.id !== action.payload.item.id
                 }),
@@ -29,9 +38,11 @@ export const projectBugs = (state = initialState, action) => {
                 })
             }
         case UPDATE_SQUASHING :
+            console.log(action.payload.item)
             return {
                 ...state,
-                squashing: [...state.squashing, action.payload.item],
+                squashing: [...state.squashing, {...action.payload.item, bugState: 2}],
+                
                 bugsToSquash: state.bugsToSquash.filter(item => {
                     return item.id !== action.payload.item.id
                 }),
@@ -45,7 +56,7 @@ export const projectBugs = (state = initialState, action) => {
         case UPDATE_REVIEW :
             return {
                 ...state,
-                review: [...state.review, action.payload.item],
+                review: [...state.review, {...action.payload.item, bugState: 3}],
                 squashing: state.squashing.filter(item => {
                     return item.id !== action.payload.item.id
                 }),
@@ -59,7 +70,7 @@ export const projectBugs = (state = initialState, action) => {
         case UPDATE_SQUASHED :
             return {
                 ...state,
-                squashed: [...state.squashed, action.payload.item],
+                squashed: [...state.squashed, {...action.payload.item, bugState: 4}],
                 squashing: state.squashing.filter(item => {
                     return item.id !== action.payload.item.id
                 }),

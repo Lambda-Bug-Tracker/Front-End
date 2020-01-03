@@ -10,20 +10,33 @@ import '../BugGroup.styles.scss';
 
 
 import { BugCard } from '../BugCard'
+const allowDrop = (input) => {
+    console.log(input)
+    if(input.item.bugState === 1){
+        return false
+    }else{
+        return true
+    }
+}
 
 const Column1 = () => {
 const data = useSelector(state => state.projectBugs)
 const dispatch = useDispatch()
-const [{isOver}, drop] = useDrop({
+const [{isOver, canDrop}, drop] = useDrop({
     accept: 'CARD',
     drop(item) {
+        console.log(item)
         dispatch({type: UPDATE_BUGSTOSQUASH, payload: item})
     },
+    canDrop: (item) => allowDrop(item),
+
     collect: monitor => ({
-        isOver: !!monitor.isOver()
+        isOver: !!monitor.isOver(),
+        canDrop: !!monitor.canDrop()
     })
+
 })
-console.log(data)
+// console.log(data)
 return (
 
     <div className="bug-group">
