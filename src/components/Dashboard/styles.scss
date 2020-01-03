@@ -29,9 +29,15 @@
 
 .top-row {
     position: absolute;
-    right: 0;
+    width: 96%;
     top: 0;
     margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    img{
+        // height: 70px;
+        width: 130px;
+    }
 }
 
 .main-container {

@@ -1,11 +1,9 @@
 import React from 'react';
-
 import { Wrapper, Button } from 'bushido-strap';
-
 import { useDispatch } from 'react-redux';
-
 import { signOut } from '../../store/actions/auth';
 
+import lambdaBanner from '../../assets/img/lambda-banner.png'
 import "./styles.scss";
 
 export default function Dashboard() {
@@ -19,6 +17,7 @@ export default function Dashboard() {
       <div className='main'>
         <div className='dashboard'>
           <div className='top-row'>
+            <img src={lambdaBanner} alt="Lambda School Logo" />
             <Button onClick={handleSignOut}>Sign Out</Button></div>
             <div className='main-container'>
               <h2>Welcome First_Name Last_Name!</h2>
