@@ -8,15 +8,27 @@ import { Wrapper, FlexBox } from "bushido-strap";
 import "@animated-burgers/burger-arrow/dist/styles.css";
 import "@animated-burgers/burger-squeeze/dist/styles.css";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { logout } from "../../store/actions/auth";
 // trying to use this library: https://march08.github.io/animated-burgers/
 
+import { useHistory } from "react-router";
+
 const HamburgerMenu = () => {
+  const dispatch = useDispatch();
+  const history = useHistory();
+
   const [openStatus, setOpenStatus] = useState(false);
   const handleClick = () => {
     setOpenStatus(!openStatus);
     console.log(openStatus, "openStatus");
-    //closeNav()
   };
+
+  function handleSignOut() {
+    dispatch(logout());
+    history.push("/");
+  }
+
   return (
     <FlexBox onClick={() => handleClick()} className="hamburger-container">
       <FlexBox className="hamburger-picture-container">
@@ -31,6 +43,9 @@ const HamburgerMenu = () => {
             <Link to="/">Dashboard</Link>
             <Link to="/login">Login</Link>
             <Link to="/register">Register</Link>
+            <button className="sign-out-btn" onClick={handleSignOut}>
+              Logout
+            </button>
           </div>
         ) : (
           ""

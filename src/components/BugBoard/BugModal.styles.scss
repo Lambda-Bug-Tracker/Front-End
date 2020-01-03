@@ -45,7 +45,6 @@
   border: 0;
   cursor: pointer;
 }
-
 .modal-window {
   position: fixed;
   background-color: rgba(255, 255, 255, 0.25);
@@ -63,7 +62,7 @@
     opacity: 1;
     pointer-events: auto;
   }
-  :div {
+  div {
     width: 400px;
     position: absolute;
     top: 50%;
