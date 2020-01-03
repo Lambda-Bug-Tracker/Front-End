@@ -14,11 +14,32 @@ import "./BugGroup.styles.scss";
 const flipAnim = keyframes`${flipInY}`;
 
 const Container = styled.div`
-  animation: 1.5s ${flipAnim};
-  width: 100%;
+  width: 99%;
   display: flex;
   justify-content: space-between;
-  margin: 0 5px;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+  .one{
+    animation: 1.5s ${flipAnim};
+    margin: 0 20px;
+    width: 100%;
+  }
+  .two{
+    animation: 1.8s ${flipAnim};
+    margin: 0 20px;
+    width: 100%;
+  }
+  .three{
+    animation: 2.1s ${flipAnim};
+    margin: 0 20px;
+    width: 100%;
+  }
+  .four{
+    animation: 2.4s ${flipAnim};
+    margin: 0 20px;
+    width: 100%;
+  }
 `
 
 const BugGroup = () => {
@@ -26,20 +47,20 @@ const BugGroup = () => {
   return (
     <Wrapper>
       <div className="bug-group-container">
-        <FlexBox className="mobile-container" justify-content="space-between">
-          <Container>
-            <Column1 />
-          </Container>
-          <Container>
-            <Column2 />
-          </Container>
-          <Container>
-            <Column3 />
-          </Container>
-          <Container>
+          <Container className="mobile-conainter">
+            <div className="one">
+              <Column1 />
+            </div>
+            <div className="two">
+              <Column2 />
+            </div>
+            <div className="three">
+              <Column3 />
+            </div>
+            <div className="four">
             <Column4 />
+            </div>
           </Container>
-        </FlexBox>
       </div>
     </Wrapper>
   );

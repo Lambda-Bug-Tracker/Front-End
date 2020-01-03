@@ -22,6 +22,9 @@ const FormContainer = styled.div`
     justify-content: center;
     align-items: center;
     margin-top: -150px;
+    @media screen and (max-width: 768px) {
+        margin-top: 50px;
+    }
     position: relative;
     .cancel{
         position: absolute;
