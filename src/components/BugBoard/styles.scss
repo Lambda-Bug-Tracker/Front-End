@@ -1,16 +1,20 @@
 $desktop: "(min-width: 769px)";
 $phone: "(min-width: 320px) and (max-width: 768px)";
 
+
 .header-container {
   justify-content: center;
   margin-top: 2rem;
   font-size: 5rem;
   color: black;
+  max-width: 100%;
+  
 
   h1 {
     display: none;
     color: #202020;
     font-family: "Montserrat", sans-serif;
+    
 
     @media #{$desktop} {
       display: flex;
@@ -29,8 +33,9 @@ $phone: "(min-width: 320px) and (max-width: 768px)";
   background-color: #ffffff;
   color: white;
   flex-direction: row;
-  width: 100%;
+  max-width: 100%;
   height: 100%;
+  
 
   .right-container {
     width: 100%;
@@ -38,6 +43,12 @@ $phone: "(min-width: 320px) and (max-width: 768px)";
 
   .top-container {
     background-color: white;
+    
+
+    @media #{$phone} {
+      max-width: 100%;
+      overflow: hidden;
+    }
   }
 
   .sidebar-container {
@@ -53,13 +64,16 @@ $phone: "(min-width: 320px) and (max-width: 768px)";
       display: flex;
       justify-content: center;
       background-color: #14131c;
+      
+      
     }
   }
   h2 {
     text-align: left;
-    margin-left: 3%;
     color: #14131c;
     font-family: "Montserrat", sans-serif;
+    padding: 20px;
+    
 
     @media #{$phone} {
       color: #ffffff;
@@ -82,6 +96,7 @@ $phone: "(min-width: 320px) and (max-width: 768px)";
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 60px; /* Place content 60px from the top */
   transition: 1s; /* 0.5 second transition effect to slide in the sidenav */
+  
 }
 
 /* The navigation menu links */
@@ -92,6 +107,11 @@ $phone: "(min-width: 320px) and (max-width: 768px)";
   color: #818181;
   display: block;
   transition: 0.3s;
+  
+
+  @media #{$phone} {
+    font-size: 16px;
+  }
 }
 
 /* When you mouse over the navigation links, change their color */
@@ -106,7 +126,7 @@ $phone: "(min-width: 320px) and (max-width: 768px)";
   right: 0;
   font-size: 36px;
   margin-right: 50px;
-  border: 2px solid red;
+  
 }
 
 .hamburger-picture-container {
