@@ -66,7 +66,7 @@ export default function Dashboard(props) {
             <div className="main-container">
               <div className="project-group-container">
                 <h2>Welcome {firebase.auth.displayName}!</h2>
-                {isCreating ? <CreateProject setIsCreating={setIsCreating} setProjects={setProjects}/> : 
+                {isCreating ? <CreateProject {...props}setIsCreating={setIsCreating} setProjects={setProjects}/> : 
                 <>
                 <h4 className="projecth4">These are your projects:</h4>
   
