@@ -1,13 +1,13 @@
-<<<<<<< HEAD
+
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import {UPDATE_BUGSTOSQUASH} from '../../../store/actions/projectBugs'
 import { useDrop } from 'react-dnd'
-=======
-import React from 'react';
+
+
 
 import '../BugGroup.styles.scss';
->>>>>>> 9facabd2f7095e8de550ac10863568c17c53c38e
+
 
 import { BugCard } from '../BugCard'
 
