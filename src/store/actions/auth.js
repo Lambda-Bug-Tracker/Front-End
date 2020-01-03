@@ -66,7 +66,7 @@ export const emailRegistration = data => dispatch => {
       // a commit
       console.log("New user info:", newUser);
       axios
-        .post(`${backendURL}/auth/register`, newUser) // { headers: auth }
+        .post(`${backendURL}auth/register`, newUser) // { headers: auth }
         .then(response => console.log("Response:", response))
         .catch(err => console.log("Error:", err));
     })
@@ -146,7 +146,7 @@ export const googleRegister = () => dispatch => {
       // a commit
       console.log("New user info:", newUser);
       axios
-        .post(`${backendURL}/auth/register`, newUser) // { headers: auth }
+        .post(`${backendURL}auth/register`, newUser) // { headers: auth }
         .then(response => console.log("Response:", response))
         .catch(err => console.log("Error:", err));
       // The signed-in user info.

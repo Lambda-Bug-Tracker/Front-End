@@ -10,6 +10,7 @@ $phone: "(min-width: 320px) and (max-width: 768px)";
   h1 {
     display: none;
     color: #202020;
+    font-family: "Montserrat", sans-serif;
 
     @media #{$desktop} {
       display: flex;
@@ -25,7 +26,7 @@ $phone: "(min-width: 320px) and (max-width: 768px)";
 }
 
 .bug-board-container {
-  background-color:#FFFFFF;;
+  background-color: #ffffff;
   color: white;
   flex-direction: row;
   width: 100%;
@@ -34,26 +35,80 @@ $phone: "(min-width: 320px) and (max-width: 768px)";
   .right-container {
     width: 100%;
   }
-  
 
   .top-container {
     background-color: white;
   }
 
-  .sidebar-container{
-    @media #{$phone}{
+  .sidebar-container {
+    @media #{$phone} {
       display: none;
     }
   }
 
   main {
     width: 100%;
-    
-    
+
+    @media #{$phone} {
+      display: flex;
+      justify-content: center;
+      background-color: #14131c;
+    }
   }
   h2 {
     text-align: left;
-    margin: 3%;
-    color: #000000;
+    margin-left: 3%;
+    color: #14131c;
+    font-family: "Montserrat", sans-serif;
+
+    @media #{$phone} {
+      color: #ffffff;
+    }
   }
+}
+
+.open {
+  color: black;
+}
+/* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 150px; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  right: 0;
+  background-color: #202020; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 1s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 36px;
+  margin-right: 50px;
+  border: 2px solid red;
+}
+
+.hamburger-picture-container {
+  width: 50px;
 }

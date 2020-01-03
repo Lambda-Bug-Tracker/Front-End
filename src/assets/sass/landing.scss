@@ -13,6 +13,13 @@
     font-size: 3.2rem;
   }
 
+  h4 {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 16px;
+    color: #bb1333;
+  }
+
   p {
     line-height: 200%;
   }
@@ -56,7 +63,7 @@
       fill: #fff;
       height: 200vh;
       width: 65%;
-      transform: translateX(-50%) translateY(-70%) rotate(15deg) scale(1.75);
+      transform: translateX(-50%) translateY(-70%) rotate(10deg) scale(1.75);
       z-index: -1;
     }
 
@@ -65,6 +72,15 @@
       display: flex;
       z-index: 100;
       position: relative;
+
+      .auth {
+        margin-left: auto;
+        display: flex;
+
+        * {
+          padding: 8px 16px;
+        }
+      }
 
       img {
         align-self: center;
@@ -84,6 +100,10 @@
         }
       }
 
+      .register {
+        color: #fff;
+      }
+      
       .login {
         margin-left: auto;
         color: #fff;
@@ -119,7 +139,7 @@
 
       img {
         width: 50%;
-        margin-left: 10%;
+        margin-left: 8%;
       }
     }
   }
@@ -191,42 +211,65 @@
   .team {
     background: #eaecf3;
     text-align: center;
+    z-index: -2;
 
     h2 {
       color: #383651;
       font-weight: bold;
+      margin-bottom: 32px;
     }
 
-    img {
-      width: 250px;
-      height: auto;
-      border-radius: 0;
+    .profile-pic {
       margin: 0 8px;
-      position: relative;
     }
 
     .team-row-1 {
-      margin-bottom: -100px;
+      display: flex;
+      justify-content: center;
       margin-left: 50px;
+      margin-bottom: -100px;
 
-      img:nth-child(1) {
-        margin-bottom: 50px;
+      .profile-pic {
+        z-index: 0;
+
+        &:hover {
+          z-index: 2;
+        }
       }
-      img:nth-child(3) {
-        margin-bottom: 25px;
+
+      .profile-pic:nth-child(1) {
+        position: relative;
+        top: -50px;
       }
-      img:nth-child(4) {
-        margin-bottom: 50px;
+
+      .profile-pic:nth-child(3) {
+        position: relative;
+        top: -25px;
+      }
+
+      .profile-pic:nth-child(4) {
+        position: relative;
+        top: -50px;
       }
     }
 
     .team-row-2 {
+      display: flex;
+      justify-content: center;
       margin-right: 50px;
-      img:nth-child(2) {
-        margin-bottom: -25px;
+
+      .profile-pic {
+        z-index: 1;
       }
-      img:nth-child(3) {
-        margin-bottom: -50px;
+
+      .profile-pic:nth-child(2) {
+        position: relative;
+        top: 25px;
+      }
+
+      .profile-pic:nth-child(3) {
+        position: relative;
+        top: 50px;
       }
     }
   }
@@ -236,5 +279,66 @@
     background: #14131c;
     color: #55596d;
     text-align: center;
+  }
+}
+
+.profile-pic {
+  width: 250px;
+  height: 250px;
+  position: relative;
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+  }
+
+  .overlay {
+    padding: 24px;
+    color: #acb2cc;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: 0.25s ease-in-out;
+    background-color: #14131c;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .social-icons {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+
+    ion-icon {
+      font-size: 3.2rem;
+      transition: 0.25s ease-in-out;
+
+      &:nth-child(1):hover {
+        color: #24292e;
+      }
+
+      &:nth-child(2):hover {
+        color: #2867b2;
+      }
+
+      &:nth-child(3):hover {
+        color: #1da1f2;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
   }
 }
