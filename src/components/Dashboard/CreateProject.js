@@ -26,7 +26,12 @@ const FormContainer = styled.div`
     }
     button{
         width: 150px;
-        margin: 0 auto;
+        margin: 15px auto;
+        color: #fff;
+        padding: 16px 32px;
+        background: #bb1333;
+        border: 0;
+        cursor: pointer;
     }
 `
 
@@ -41,9 +46,7 @@ export default function CreateProject (props) {
         <FormContainer>
         <Form onSubmit={handleSubmit}>
             <Input name='title' placeholder="Project Title"/>
-            <Input name='title' placeholder="Project Name"/>
-            <Input name='title' placeholder="Something else..."/>
-            <Button type='submit'>Save</Button>
+            <button type='submit'>Save</button>
         </Form>
         </FormContainer>
     )
