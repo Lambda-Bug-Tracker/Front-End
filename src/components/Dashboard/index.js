@@ -38,8 +38,9 @@ export default function Dashboard() {
             <img src={lambdaBanner} alt="Lambda School Logo" />
             <Button onClick={handleSignOut}>Sign Out</Button></div>
             <div className='main-container'>
-              <h2>Welcome First_Name Last_Name!</h2>
+              
               <div className="project-group-container">
+              <h2>Welcome First_Name Last_Name!</h2>
               <h4 className="projecth4">These are your projects:</h4>
                 <div className="project-group">
                   {/* Map over user projects here */}
