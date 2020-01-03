@@ -5,16 +5,27 @@ import { useDrop } from 'react-dnd'
 import '../BugGroup.styles.scss';
 import { BugCard } from '../BugCard';
 
+const allowDrop = (input) => {
+    console.log(input)
+    if(input.item.bugState === 3){
+        return false
+    }else{
+        return true
+    }
+}
+
 const Column3 = () => {
     const data = useSelector(state => state.projectBugs)
     const dispatch = useDispatch()
-    const [{isOver}, drop] = useDrop({
+    const [{isOver, canDrop}, drop] = useDrop({
         accept: 'CARD',
         drop(item) {
             dispatch({type:UPDATE_REVIEW, payload: item})
         },
+        canDrop: (item) => allowDrop(item),
         collect: monitor => ({
-            isOver: !!monitor.isOver()
+            isOver: !!monitor.isOver(),
+            canDrop: !!monitor.canDrop()
         })
     })
    return (
