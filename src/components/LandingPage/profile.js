@@ -8,9 +8,9 @@ export default function ProfilePic(props) {
                 <h4>{props.data.name}</h4>
                 <p>{props.data.snip}</p>
                 <div className='social-icons'>
-                    <ion-icon className='logo-github' name="logo-github"></ion-icon>
-                    <ion-icon className='logo-linkedin' name="logo-linkedin"></ion-icon>
-                    <ion-icon className='logo-twitter' name="logo-twitter"></ion-icon>
+                    <a href={props.data.github}><ion-icon className='logo-github' name="logo-github"></ion-icon></a>
+                    <a href={props.data.linkedin}><ion-icon className='logo-linkedin' name="logo-linkedin"></ion-icon></a>
+                    <a href={props.data.twitter}><ion-icon className='logo-twitter' name="logo-twitter"></ion-icon></a>
                     <i class="fab fa-dev"></i>
                 </div>
             </div>
