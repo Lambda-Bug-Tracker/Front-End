@@ -30,19 +30,19 @@ export function BugCard(props) {
         ref={drag}
         style={{
           opacity: isDragging ? 0.5 : 1,
-          boxShadow:
+          border:
             props.item.priority_tag === 1
-              ? "0 0.3rem 1rem red"
+              ? "3px solid #13BB93"
               : props.item.priority_tag === 2
-              ? "0 0.3rem 1rem yellow"
+              ? "3px solid #FFFFA1"
               : props.item.priority_tag === 3
-              ? "0 0.3rem 1rem blue"
+              ? "3px solid #bb1333"
               : null
         }}
         width="90%"
         align="flex-start"
       >
-        <div>
+        <div className="bug-card-title">
           <img
             src={
               props.item.hash_tag === 1
@@ -55,10 +55,10 @@ export function BugCard(props) {
             }
             style={{ width: "20%" }}
           />
-          <span> {props.item.bug_name} </span>
+          <span className="bugname"> {props.item.bug_name} </span>
         </div>
 
-        <p> {props.item.description} </p>
+        <p className="bug-description"> {props.item.description} </p>
         <h5>
           {props.item.priority_tag === 1 && "!"}
           {props.item.priority_tag === 2 && "!!"}

@@ -13,6 +13,17 @@ $phone: "(min-width: 320px) and (max-width: 768px)";
   }
 }
 
+.bug-card-title {
+  display: flex;
+  width: 125px;
+  .bugname {
+    margin-left: 5px;
+  }
+}
+
+.bug-description {
+  margin: 1rem 0;
+}
 .bug-group {
   width: 100%;
   display: flex;
