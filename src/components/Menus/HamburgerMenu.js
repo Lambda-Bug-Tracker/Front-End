@@ -28,8 +28,7 @@ const HamburgerMenu = () => {
       <div id="mySidenav" className={openStatus ? "sidenav" : "sidenavclose"}>
         {openStatus ? (
           <div>
-            <Link to="/">Home</Link>
-            <Link to="/dashboard">Dashboard</Link>
+            <Link to="/">Dashboard</Link>
             <Link to="/login">Login</Link>
             <Link to="/register">Register</Link>
           </div>

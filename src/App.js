@@ -19,24 +19,20 @@ import Register from "./components/Auth/Register";
 import Login from "./components/Auth/Login";
 import Dashboard from "./components/Dashboard";
 import { BugModal } from "./components/BugBoard/BugModal";
-import LandingPage from "./components/LandingPage/index.js";
 
 const App = () => {
-  const firebase = useSelector(state => state.firebase)
+  const firebase = useSelector(state => state.firebase);
   return (
     <DndProvider backend={Backend}>
       <AppWrapper>
-
         <Switch>
           <PrivateRoute path="/project/:id" component={BugBoard} />
           <PrivateRoute path="/bug-modal/:id" component={BugModal} />
-
         </Switch>
-          <Route exact path="/" component={firebase.auth.isEmpty ? LandingPage : Dashboard} />
+        <PrivateRoute exact path="/" component={Dashboard} />
 
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
-
       </AppWrapper>
     </DndProvider>
   );
