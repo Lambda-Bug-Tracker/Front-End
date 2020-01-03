@@ -46,7 +46,7 @@ export default function Dashboard() {
             <div className='main-container'>
               <div className="project-group-container">
               <h2>Welcome First_Name Last_Name!</h2>
-              {isCreating ? <CreateProject /> : 
+              {isCreating ? <CreateProject setIsCreating={setIsCreating} /> : 
               <>
               <h4 className="projecth4">These are your projects:</h4>
                 <div className="project-group">
