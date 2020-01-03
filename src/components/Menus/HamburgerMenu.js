@@ -12,7 +12,11 @@ const HamburgerMenu = () => {
   };
   return (
     <div className="hamburger-container">
-      <Burger onClick={() => handleClick()} isOpen={openStatus} />
+      <Burger
+        direction="right"
+        onClick={() => handleClick()}
+        isOpen={openStatus}
+      />
     </div>
   );
 };
