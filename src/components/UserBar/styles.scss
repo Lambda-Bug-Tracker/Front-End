@@ -60,5 +60,9 @@
 .key-list {
   text-align: left;
   flex-direction: column;
-  align-items: center;
+  margin-left: 60px;
+}
+
+.key-row {
+  display: flex;
 }
