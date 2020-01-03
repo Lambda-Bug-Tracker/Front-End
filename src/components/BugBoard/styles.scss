@@ -23,11 +23,23 @@ $phone: "(min-width: 320px) and (max-width: 768px)";
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 99vw;
+  width: 100%;
   height: 100vh;
   .sidebar-container {
     @media #{$phone} {
       display: none;
+    }
+
+    .user-container {
+      border-width: 0;
+      background: #14131c;
+      padding: 32px;
+    }
+
+    .user-list {
+      margin: 32px 0;
+      display: flex;
+      flex-direction: column;
     }
   }
   .right-container {
@@ -145,16 +157,4 @@ $phone: "(min-width: 320px) and (max-width: 768px)";
 .hamburger-picture-container {
   width: 50px;
   margin: 20px;
-}
-
-.user-container {
-  border-width: 0;
-  background: #14131c;
-  padding: 32px;
-}
-
-.user-list {
-  margin: 32px 0;
-  display: flex;
-  flex-direction: column;
 }
