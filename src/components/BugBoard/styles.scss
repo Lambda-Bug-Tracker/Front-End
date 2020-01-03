@@ -122,6 +122,19 @@ $phone: "(min-width: 320px) and (max-width: 768px)";
   transition: 1s; /* 0.5 second transition effect to slide in the sidenav */
 }
 
+.sidenavclose {
+  height: 100%; /* 100% Full-height */
+  width: 0px; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  right: 0;
+  background-color: #14131c; /* blue-black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 1s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
 /* The navigation menu links */
 .sidenav a {
   padding: 8px 8px 8px 32px;
@@ -138,7 +151,7 @@ $phone: "(min-width: 320px) and (max-width: 768px)";
 
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
-  color: #f1f1f1;
+  color: #bb1333;
 }
 
 /* Position and style the close button (top right corner) */
@@ -152,4 +165,5 @@ $phone: "(min-width: 320px) and (max-width: 768px)";
 
 .hamburger-picture-container {
   width: 50px;
+  margin: 20px;
 }

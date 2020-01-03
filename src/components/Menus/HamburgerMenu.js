@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import Burger from "@animated-burgers/burger-arrow";
 import "./menu-styles.styles.scss";
 
-
-
 // tryign to use this library: https://march08.github.io/animated-burgers/
 
 import BurgerImage from "../../images/black-hamburger-menu.png";
@@ -30,12 +28,8 @@ const HamburgerMenu = () => {
         />
       </FlexBox>
 
-      <div id="mySidenav" className={openStatus ? "sidenav" : ""}>
-        <Burger
-          direction="right"
-          onClick={() => handleClick()}
-          isOpen={openStatus}
-        />
+      <div id="mySidenav" className={openStatus ? "sidenav" : "sidenavclose"}>
+        <Burger direction="right" onClick={() => handleClick()} isOpen={true} />
         {openStatus ? (
           <div>
             <Link to="/">Home</Link>
