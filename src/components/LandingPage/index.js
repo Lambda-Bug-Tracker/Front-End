@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import Profile from './profile';
 
 import '../../assets/css/landing.css';
@@ -67,8 +68,8 @@ export default function LandingPage() {
               <li><a href='#'>Team</a></li>
             </ul>
             <div className='auth'>
-              <a className='register' href='#'>Register</a>
-              <a className='login' href='#'>Login<ion-icon name="arrow-round-forward"></ion-icon></a>
+              <Link className='register' to='/register'>Register</Link>
+              <Link className='login' to='login'>Login<ion-icon name="arrow-round-forward"></ion-icon></Link>
             </div>
           </nav>
           <div className='hero'>

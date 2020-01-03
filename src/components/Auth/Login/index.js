@@ -51,26 +51,27 @@ export default function Register() {
   };
 
   return (
-    <div className="main">
-      <div className="dashboard">
-        <div className='top-row'>
-              <a href="/"><img src={lambdaBanner} alt="Lambda School Logo" /></a>
-            </div>
-            <div className="title">Login to Lambda Bugtracker</div>
-            { isLoading ? <Loading /> : 
-              <Form onSubmit={handleSubmit(onSubmit)}>
-                <Input type="text" name='email' value={data.email} onChange={handleChange} placeholder="Email" ref={register} />
-                {errors.email && <p>{errors.email.message}</p>}
-                <Input type="password" name='password' value={data.password} onChange={handleChange} placeholder="Password" ref={register} />
-                {errors.password && <p>{errors.password.message}</p>}
-                <Button type="submit">Login</Button>
-                {error && <div className="error">{error}</div>}
-              </Form>
-            }
-        </div>
-      <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-        <polygon points="0 0,100 0,100 100,0 100" />
-      </svg>
+    <div className='login-page'>
+      <div className="main">
+        <div className="dashboard">
+          <div className='top-row row'>
+            <a href="/"><img src={lambdaBanner} alt="Lambda School Logo" /></a>
+          </div>
+              { isLoading ? <Loading /> : 
+                <Form onSubmit={handleSubmit(onSubmit)}>
+                  <Input type="text" name='email' value={data.email} onChange={handleChange} placeholder="Email" ref={register} />
+                  {errors.email && <p>{errors.email.message}</p>}
+                  <Input type="password" name='password' value={data.password} onChange={handleChange} placeholder="Password" ref={register} />
+                  {errors.password && <p>{errors.password.message}</p>}
+                  <button type="submit">Login</button>
+                  {error && <div className="error">{error}</div>}
+                </Form>
+              }
+          </div>
+        <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+          <polygon points="0 0,100 0,100 100,0 100" />
+        </svg>
+      </div>
     </div>
   );
 }

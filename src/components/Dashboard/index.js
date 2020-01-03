@@ -36,7 +36,8 @@ export default function Dashboard() {
         <div className='dashboard'>
           <div className='top-row'>
             <img src={lambdaBanner} alt="Lambda School Logo" />
-            <Button onClick={handleSignOut}>Sign Out</Button></div>
+            <Button onClick={handleSignOut}>Sign Out</Button>
+          </div>
             <div className='main-container'>
               <div className="project-group-container">
               <h2>Welcome First_Name Last_Name!</h2>
