@@ -1,13 +1,21 @@
 import React from "react";
-import "./styles.scss";
+import styled, { keyframes } from "styled-components";
+import {slideInLeft} from "react-animations";
 import { Wrapper, FlexBox } from "bushido-strap";
-
+import "./styles.scss";
 import b from "../../images/b.png";
 import beetle from "../../images/beetle.png";
 import butterfly from "../../images/butterfly.png";
 
+const slideAnim = keyframes`${slideInLeft}`;
+
+const Container = styled.div`
+  animation: 1.5s ${slideAnim};
+`
+
 export default function UserBar() {
   return (
+    <Container>
     <Wrapper className="user-container">
       <FlexBox className="user-list" justify-content="center" width="90%">
         <FlexBox className="admin-list">
@@ -38,5 +46,6 @@ export default function UserBar() {
         </FlexBox>
       </FlexBox>
     </Wrapper>
+    </Container>
   );
 }
