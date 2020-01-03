@@ -10,6 +10,7 @@ $phone: "(min-width: 320px) and (max-width: 768px)";
   h1 {
     display: none;
     color: #202020;
+    font-family: "Montserrat", sans-serif;
 
     @media #{$desktop} {
       display: flex;
@@ -50,8 +51,9 @@ $phone: "(min-width: 320px) and (max-width: 768px)";
   }
   h2 {
     text-align: left;
-    margin: 3%;
+    margin-left: 3%;
     color: #000000;
+    font-family: "Montserrat", sans-serif;
   }
 }
 
