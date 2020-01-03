@@ -25,7 +25,7 @@ $phone: "(min-width: 320px) and (max-width: 768px)";
 }
 
 .bug-board-container {
-  background-color:#FFFFFF;;
+  background-color: #ffffff;
   color: white;
   flex-direction: row;
   width: 100%;
@@ -34,26 +34,30 @@ $phone: "(min-width: 320px) and (max-width: 768px)";
   .right-container {
     width: 100%;
   }
-  
 
   .top-container {
     background-color: white;
   }
 
-  .sidebar-container{
-    @media #{$phone}{
+  .sidebar-container {
+    @media #{$phone} {
       display: none;
     }
   }
 
   main {
     width: 100%;
-    
-    
   }
   h2 {
     text-align: left;
     margin: 3%;
     color: #000000;
   }
+}
+
+.burger .burger-lines,
+.burger .burger-lines:after,
+.burger .burger-lines:before {
+  color: black;
+  background-color: black;
 }
