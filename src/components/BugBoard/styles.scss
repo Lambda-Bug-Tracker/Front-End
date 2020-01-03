@@ -1,6 +1,22 @@
 $desktop: "(min-width: 769px)";
 $phone: "(min-width: 320px) and (max-width: 768px)";
-
+.burger .burger-lines,
+.burger .burger-lines:after,
+.burger .burger-lines:before {
+  background-color: #bb1333;
+  z-index: 5;
+  position: absolute;
+}
+.hamburger-container {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+.burger-squeeze-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
 .bug-board-container {
   background-color: #ffffff;
   color: white;
