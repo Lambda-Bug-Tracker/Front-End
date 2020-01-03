@@ -11,6 +11,7 @@ export default function ProfilePic(props) {
                     <ion-icon className='logo-github' name="logo-github"></ion-icon>
                     <ion-icon className='logo-linkedin' name="logo-linkedin"></ion-icon>
                     <ion-icon className='logo-twitter' name="logo-twitter"></ion-icon>
+                    <i class="fab fa-dev"></i>
                 </div>
             </div>
         </div>
