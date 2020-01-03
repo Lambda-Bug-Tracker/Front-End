@@ -17,6 +17,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import Register from "./components/Auth/Register";
 import Login from "./components/Auth/Login";
 import Dashboard from "./components/Dashboard";
+import { BugModal } from './components/BugBoard/BugModal';
 
 const App = () => {
   return (
@@ -26,7 +27,11 @@ const App = () => {
         <Route path="/project" component={BugBoard} />
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
+
         <Route path="/dashboard" component={Dashboard} />
+
+        <Route path='/bug-modal/:id' component={BugModal} />
+
       </AppWrapper>
     </DndProvider>
   );
