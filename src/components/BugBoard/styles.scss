@@ -6,6 +6,7 @@ $phone: "(min-width: 320px) and (max-width: 768px)";
   background-color: #bb1333;
   z-index: 5;
   position: absolute;
+  cursor: pointer;
 }
 .hamburger-container {
   position: absolute;
@@ -38,8 +39,15 @@ $phone: "(min-width: 320px) and (max-width: 768px)";
 
     .user-list {
       margin: 32px 0;
+      padding: 64px;
       display: flex;
       flex-direction: column;
+
+      .admin-list,
+      .dev-list,
+      .key-list {
+        flex-direction: column;
+      }
     }
   }
   .right-container {
