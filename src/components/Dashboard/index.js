@@ -7,9 +7,9 @@ import lambdaBanner from '../../assets/img/lambda-banner.png';
 import "./styles.scss";
 
 import styled, { keyframes } from "styled-components";
-import {flipInX, tada} from "react-animations";
+import {pulse, tada} from "react-animations";
 
-const flipAnim = keyframes`${flipInX}`;
+const flipAnim = keyframes`${pulse}`;
 const tadaAnim = keyframes`${tada}`;
 
 const randomDuration = () =>{
@@ -32,41 +32,43 @@ export default function Dashboard() {
   }
   return (
     <Wrapper>
-      <div className='main'>
-        <div className='dashboard'>
-          <div className='top-row'>
-            <img src={lambdaBanner} alt="Lambda School Logo" />
-            <Button onClick={handleSignOut}>Sign Out</Button>
-          </div>
-            <div className='main-container'>
-              <div className="project-group-container">
-              <h2>Welcome First_Name Last_Name!</h2>
-              <h4 className="projecth4">These are your projects:</h4>
-                <div className="project-group">
-                  {/* Map over user projects here */}
-                    <ProjectCard className="project-card">
-                      Project_Name
-                    </ProjectCard>
-                    <ProjectCard className="project-card">
-                      Project_Name
-                    </ProjectCard>
-                    <ProjectCard className="project-card">
-                      Project_Name
-                    </ProjectCard>
-                    <ProjectCard className="project-card">
-                      Project_Name
-                    </ProjectCard>
-                    <ProjectCard className="project-card">
-                      Project_Name
-                    </ProjectCard>
-                </div>
-                <Button>New Project</Button>
-              </div>
+      <div className='dashboard'>
+        <div className='main'>
+          <div className='dashboard'>
+            <div className='top-row row'>
+              <img src={lambdaBanner} alt="Lambda School Logo" />
+              <button onClick={handleSignOut}>Sign Out</button>
             </div>
+              <div className='main-container'>
+                <div className="project-group-container">
+                <h2>Welcome First_Name Last_Name!</h2>
+                <h4 className="projecth4">These are your projects:</h4>
+                  <div className="project-group">
+                    {/* Map over user projects here */}
+                      <ProjectCard className="project-card">
+                        Project_Name
+                      </ProjectCard>
+                      <ProjectCard className="project-card">
+                        Project_Name
+                      </ProjectCard>
+                      <ProjectCard className="project-card">
+                        Project_Name
+                      </ProjectCard>
+                      <ProjectCard className="project-card">
+                        Project_Name
+                      </ProjectCard>
+                      <ProjectCard className="project-card">
+                        Project_Name
+                      </ProjectCard>
+                  </div>
+                  <button>New Project</button>
+                </div>
+              </div>
+          </div>
+          <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+            <polygon points="0 0,100 0,100 100,0 100" />
+          </svg>
         </div>
-        <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-          <polygon points="0 0,100 0,100 100,0 100" />
-        </svg>
       </div>
     </Wrapper>
   );
