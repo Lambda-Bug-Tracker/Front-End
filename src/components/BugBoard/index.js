@@ -34,40 +34,35 @@ const BugBoard = ({ history }) => {
   };
 
   return (
-    <Wrapper className="bug-board-container" width="100%" direction='row'>
-      <FlexBox className="sidebar-container">
-        <UserBar />
-      </FlexBox>
-      <div className="right-container">
-        <FlexBox
-          className="top-container"
-          justify-content="center"
-          width="100%"
-        >
-          <FlexBox className="header-container" width="100%">
-            <h1>Lambda Bug Tracker </h1>
-            <img className="logo" alt="logo" src={Logo} />
-          </FlexBox>
-          <HamburgerMenu />
-        </FlexBox>
-        <main>
-          {addingNewBug ? (
-            <AddNewBug id={id} setAddingNewBug={setAddingNewBug} />
-          ) : (
-            <>
-              <div className="title-container">
-                <h2>
-                  {history.location.state &&
-                    history.location.state.project_name}
-                </h2>
-                <button onClick={handleAddNewBug}>Add New Bug</button>
-              </div>
-              <div className="bug-group-container">
-                <BugGroup />
-              </div>
-            </>
-          )}
-        </main>
+    <Wrapper>
+      <div className="bug-board-container">
+        <div className="sidebar-container">
+          <UserBar />
+        </div>
+        <div className="right-container">
+          <div className="top-container">
+              <h1>Lambda Bug Tracker </h1>
+              <img className="logo" alt="logo" src={Logo} />
+            <HamburgerMenu />
+          </div>
+            {addingNewBug ? (
+              <AddNewBug id={id} setAddingNewBug={setAddingNewBug} />
+            ) : (
+              <>
+                <div className="title-container">
+                  <h2>
+                    {history.location.state &&
+                      history.location.state.project_name}
+                  </h2>
+                  <button onClick={handleAddNewBug}>Add New Bug</button>
+                </div>
+                <div className="bug-group-container">
+                  <BugGroup />
+                </div>
+              </>
+            )}
+
+        </div>
       </div>
     </Wrapper>
   );
