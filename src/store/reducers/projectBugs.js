@@ -1,7 +1,12 @@
 import { UPDATE_BUGSTOSQUASH, UPDATE_SQUASHING, UPDATE_REVIEW, UPDATE_SQUASHED } from '../actions/projectBugs'
 
 const initialState = {
-    bugsToSquash:[],
+    bugsToSquash:[{name:'Bad Bug',
+     id: Math.random(),
+    description: 'everything is broken!',
+    bugType: 1,
+    priority: 3
+    }],
     squashing:[],
     review:[],
     squashed:[]
