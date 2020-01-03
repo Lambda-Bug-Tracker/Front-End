@@ -90,9 +90,10 @@ export default function AddNewBug (props) {
         axios.post(`https://lambda-bug-tracker.herokuapp.com/bugs/${props.id}`, form)
             .then(res => {
                 console.log(res)
+                props.setAddingNewBug(false)
             })
             .catch(err => console.log(err))
-        props.setAddingNewBug(false)
+        
     }
 
     return(

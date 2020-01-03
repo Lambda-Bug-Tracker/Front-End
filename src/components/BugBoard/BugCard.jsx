@@ -30,23 +30,23 @@ export function BugCard(props) {
         <Link to={`/bug-modal/${props.item.id}`}>
         <Card ref={drag} style={{
             opacity: isDragging ? 0.5 : 1,
-            boxShadow: priorityTest === 1 ? '0 0.3rem 1rem red' :
-                priorityTest === 2 ?  '0 0.3rem 1rem yellow' :
-                priorityTest === 3 ? '0 0.3rem 1rem blue' :
+            boxShadow: props.item.priority_tag === 1 ? '0 0.3rem 1rem red' :
+                props.item.priority_tag === 2 ?  '0 0.3rem 1rem yellow' :
+                props.item.priority_tag === 3 ? '0 0.3rem 1rem blue' :
                 null
             }} width='90%' align='flex-start'  >
             <div >
             <img src={
-                typeTest === 1 ? bee :
-                typeTest === 2 ? beetle :
-                typeTest === 3 ? butterfly:
+                props.item.hash_tag === 1 ? bee :
+                props.item.hash_tag === 2 ? beetle :
+                props.item.hash_tag === 3 ? butterfly:
                 null
             }  style={{width: '20%'}}/> 
-            <span> {props.item.name}  </span>
+            <span> {props.item.bug_name}  </span>
             </div>
         
            <p> {props.item.description} </p> 
-        <h5>{priorityTest === 1 && '!'}{priorityTest === 2 && '!!'}{priorityTest === 3 && '!!!'}</h5>
+        <h5>{props.item.priority_tag === 1 && '!'}{props.item.priority_tag === 2 && '!!'}{props.item.priority_tag === 3 && '!!!'}</h5>
         
         </Card>
         </Link>

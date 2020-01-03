@@ -32,9 +32,9 @@ const [{isOver, canDrop}, drop] = useDrop({
     <div className="bug-group">
         <h4 className="progressh4">Squashed</h4>
         <div className="progress-column" ref={drop}>
-            {data.squashed.map((item, index) => {
+            {/* {data.squashed.map((item, index) => {
                 return <BugCard item={item} key={index} />
-            })}
+            })} */}
         </div>
      </div>
 )
