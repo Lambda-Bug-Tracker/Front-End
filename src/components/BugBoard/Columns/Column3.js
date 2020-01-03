@@ -32,9 +32,9 @@ const Column3 = () => {
     <div className="bug-group">
         <h4 className="progressh4">For Review</h4>
         <div className="progress-column" ref={drop}>
-            {data.review.map((item, index) => {
+            {/* {data.review.map((item, index) => {
                 return <BugCard item={item} key={index} />
-            })}
+            })} */}
         </div>
     </div>
 )
