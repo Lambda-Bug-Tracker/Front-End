@@ -26,7 +26,7 @@ const BugBoard = () => {
        
       })
       .catch(err => console.log(err))
-  }, [])
+  }, [addingNewBug])
 
   const handleAddNewBug = e => {
     e.preventDefault();
