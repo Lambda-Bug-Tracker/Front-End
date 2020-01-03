@@ -13,6 +13,9 @@ import { Card } from "bushido-strap";
 import butterfly from "../../images/butterfly.png";
 import beetle from "../../images/beetle.png";
 import bee from "../../images/b.png";
+
+import './BugModal.styles.scss';
+
 const priorityTest = 3;
 const typeTest = 3;
 
@@ -63,6 +66,8 @@ export function BugCard(props) {
           {props.item.priority_tag === 2 && "!!"}
           {props.item.priority_tag === 3 && "!!!"}
         </h5>
+
+
       </Card>
     </Link>
   );
