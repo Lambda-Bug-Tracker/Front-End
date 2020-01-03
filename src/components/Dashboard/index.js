@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import { Wrapper, Button } from 'bushido-strap';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../../store/actions/auth';
+import axios from 'axios'
 import CreateProject from './CreateProject';
 import lambdaBanner from '../../assets/img/lambda-banner.png';
 import "./styles.scss";
@@ -28,6 +29,21 @@ const ProjectCard = styled.div`
 export default function Dashboard() {
   const [isCreating, setIsCreating] = useState(false);
   const dispatch = useDispatch();
+  const firebase = useSelector(state => state.firebase)
+  const [projects, setProjects] = useState()
+  console.log(projects)
+
+  useEffect(() => {
+    setTimeout(() => {
+      axios.get(`https://lambda-bug-tracker.herokuapp.com/projects/${firebase.auth.uid}`)
+    .then(res => {
+      // console.log(res)
+      setProjects(res.data.projects)
+    })
+    .catch(err => console.log(err))
+    }, 500)
+    
+  }, [])
 
   function handleNewProject(e) {
     e.preventDefault()
@@ -48,14 +64,24 @@ export default function Dashboard() {
             </div>
             <div className="main-container">
               <div className="project-group-container">
-                <h2>Welcome First_Name Last_Name!</h2>
-                {isCreating ? <CreateProject setIsCreating={setIsCreating} /> : 
+                <h2>Welcome {firebase.auth.displayName}</h2>
+                {isCreating ? <CreateProject setIsCreating={setIsCreating} setProjects={setProjects}/> : 
                 <>
                 <h4 className="projecth4">These are your projects:</h4>
   
                 <div className="project-group">
                   {/* Map over user projects here */}
-                  <Link to="/project">
+                  {projects && projects.map((item, index) => {
+                    return (
+                      <Link key={index} to='/project'>
+                        <ProjectCard className="project-card">
+                          <h3>{item.project_name}</h3>
+                          <p>{item.description}</p>
+                        </ProjectCard>
+                      </Link>
+                    )
+                  })}
+                  {/* <Link to="/project">
                     <ProjectCard className="project-card">
                       Project_Name
                     </ProjectCard>
@@ -79,7 +105,7 @@ export default function Dashboard() {
                     <ProjectCard className="project-card">
                       Project_Name
                     </ProjectCard>
-                  </Link>
+                  </Link> */}
                 </div>
                 <button className="new-project-btn" onClick={handleNewProject}>New Project</button>
                 </>

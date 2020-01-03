@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled, { keyframes } from "styled-components";
 import {slideInUp} from "react-animations";
+import { useSelector } from 'react-redux'
+import axios from 'axios'
 
 import { Form, Input, Button } from "bushido-strap";
 
@@ -44,14 +46,28 @@ const FormContainer = styled.div`
 `
 
 export default function CreateProject (props) {
+    const [form, setForm] = useState({
+        name: '',
+        description: '',
 
+<<<<<<< HEAD
+    })
+    const firebase = useSelector(state => state.firebase)
+=======
     const handleCancel = e => {
         e.preventDefault()
         props.setIsCreating(false)
     }
 
+>>>>>>> master
     const handleSubmit = e => {
         e.preventDefault()
+        axios.post(`https://lambda-bug-tracker.herokuapp.com/projects/${firebase.auth.uid}`, form)
+            .then(res => {
+                console.log(res)
+                props.setProjects(res.data.projects)
+            })
+            .catch(err => console.log(err))
         props.setIsCreating(false)
     }
 
@@ -59,8 +75,27 @@ export default function CreateProject (props) {
         <FormContainer>
             <div className='cancel' onClick={handleCancel}>X</div>
         <Form onSubmit={handleSubmit}>
+<<<<<<< HEAD
+            <Input 
+                name='name' 
+                placeholder="Project Title"
+                value={form.name}
+                onChange={(e) => {
+                    setForm({...form, [e.target.name]:e.target.value})
+                }}
+                />
+            <Input 
+                name='description' 
+                placeholder="Project Description"
+                value={form.description}
+                onChange={(e) => setForm({...form, [e.target.name]:e.target.value})}
+                />
+            {/* <Input name='title' placeholder="Something else..."/> */}
+            <Button type='submit'>Save</Button>
+=======
             <Input name='title' placeholder="Project Title"/>
             <button type='submit'>Save</button>
+>>>>>>> master
         </Form>
         </FormContainer>
     )
