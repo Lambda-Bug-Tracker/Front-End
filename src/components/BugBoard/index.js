@@ -47,7 +47,7 @@ const BugBoard = () => {
           <HamburgerMenu />
         </FlexBox>
         <main>
-          {addingNewBug ? <AddNewBug setAddingNewBug={setAddingNewBug} /> : 
+          {addingNewBug ? <AddNewBug id={id} setAddingNewBug={setAddingNewBug} /> : 
           <>
           <div className="title-container">
             <h2>Title</h2>
