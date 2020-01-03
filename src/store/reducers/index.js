@@ -7,5 +7,5 @@ import { firebaseReducer } from "react-redux-firebase";
 export default combineReducers({
   auth,
   projectBugs,
-  firestore: firebaseReducer
+  firebase: firebaseReducer
 });

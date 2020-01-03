@@ -6,7 +6,7 @@
 //                     do not make changes to the URL unless you are updating the master
 //                     backend URL address!!
 //                     *************
-const productionURL = `http://localhost:4000`;
+const productionURL = `https://lambda-bug-tracker.herokuapp.com/`;
 //                     STOP! MOVE AWAY FROM THE COOKIE JAR!
 //                     ARE YOU SURE YOU SHOULD BE EDITING THIS VALUE?
 

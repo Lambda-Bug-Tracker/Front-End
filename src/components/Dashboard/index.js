@@ -1,7 +1,7 @@
 import React from "react";
 import { Wrapper, Button } from "bushido-strap";
 import { useDispatch } from "react-redux";
-import { signOut } from "../../store/actions/auth";
+import { logout } from "../../store/actions/auth";
 import { Link } from "react-router-dom";
 import lambdaBanner from "../../assets/img/lambda-banner.png";
 import "./styles.scss";
@@ -28,7 +28,7 @@ export default function Dashboard() {
   const dispatch = useDispatch();
 
   function handleSignOut() {
-    dispatch(signOut());
+    dispatch(logout());
   }
   return (
     <Wrapper>
