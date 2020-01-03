@@ -51,7 +51,7 @@ const BugBoard = ({ history }) => {
               <>
                 <div className="title-container">
                   <h2>
-                  {
+                  {history.location.state && history.location.state.title && history.location.state.title.project_name ||
                     history.location.state.project_name}
                     
                   </h2>
