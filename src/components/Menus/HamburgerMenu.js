@@ -11,7 +11,7 @@ const HamburgerMenu = () => {
     setOpenStatus(!openStatus);
   };
   return (
-    <div className="background-black">
+    <div className="hamburger-container">
       <Burger onClick={() => handleClick()} isOpen={openStatus} />
     </div>
   );
