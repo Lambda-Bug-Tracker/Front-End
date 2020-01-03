@@ -13,7 +13,13 @@ import { Card } from "bushido-strap";
 import butterfly from "../../images/butterfly.png";
 import beetle from "../../images/beetle.png";
 import bee from "../../images/b.png";
+<<<<<<< HEAD
+
+import './BugModal.styles.scss';
+
+=======
 import axios from "axios";
+>>>>>>> bb8d6622fe8e70a8f63caae2f5351b27ec113e45
 const priorityTest = 3;
 const typeTest = 3;
 
@@ -74,7 +80,12 @@ export function BugCard(props) {
           {props.item.priority_tag === 2 && "!!"}
           {props.item.priority_tag === 3 && "!!!"}
         </h5>
+<<<<<<< HEAD
+
+
+=======
         </div>
+>>>>>>> bb8d6622fe8e70a8f63caae2f5351b27ec113e45
       </Card>
     </Link>
   );
