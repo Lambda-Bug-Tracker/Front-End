@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Wrapper, Button } from 'bushido-strap';
 import { useDispatch } from 'react-redux';
 import { signOut } from '../../store/actions/auth';
-
+import CreateProject from './CreateProject';
 import lambdaBanner from '../../assets/img/lambda-banner.png';
 import "./styles.scss";
 
@@ -25,7 +25,13 @@ const ProjectCard = styled.div`
 `
 
 export default function Dashboard() {
+  const [isCreating, setIsCreating] = useState(false);
   const dispatch = useDispatch();
+
+  function handleNewProject(e) {
+    e.preventDefault()
+    setIsCreating(true)
+  }
 
   function handleSignOut() {
     dispatch(signOut());
@@ -40,6 +46,8 @@ export default function Dashboard() {
             <div className='main-container'>
               <div className="project-group-container">
               <h2>Welcome First_Name Last_Name!</h2>
+              {isCreating ? <CreateProject /> : 
+              <>
               <h4 className="projecth4">These are your projects:</h4>
                 <div className="project-group">
                   {/* Map over user projects here */}
@@ -59,7 +67,9 @@ export default function Dashboard() {
                       Project_Name
                     </ProjectCard>
                 </div>
-                <Button>New Project</Button>
+                <Button onClick={handleNewProject}>New Project</Button>
+                </>
+                }
               </div>
             </div>
         </div>

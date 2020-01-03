@@ -23,8 +23,8 @@ const App = () => {
   return (
     <DndProvider backend={Backend}>
       <AppWrapper>
-        <BugBoard />
-        {/* <Dashboard /> */}
+        {/* <BugBoard /> */}
+        <Dashboard />
         <PrivateRoute path="/" exact component={Dashboard} />
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
