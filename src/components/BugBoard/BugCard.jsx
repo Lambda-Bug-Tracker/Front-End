@@ -13,6 +13,7 @@ import { Card } from "bushido-strap";
 import butterfly from "../../images/butterfly.png";
 import beetle from "../../images/beetle.png";
 import bee from "../../images/b.png";
+import axios from "axios";
 const priorityTest = 3;
 const typeTest = 3;
 
@@ -23,6 +24,13 @@ export function BugCard(props) {
       isDragging: !!monitor.isDragging()
     })
   });
+
+  const handleDelete = e => {
+      e.preventDefault()
+      console.log('delete',props.id)
+    //   axios.delete(`https://lambda-bug-tracker.herokuapp.com/bugs/${id}`)
+  }
+
   return (
     <Link to={`/bug-modal/${props.item.id}`}>
       <Card
@@ -42,7 +50,7 @@ export function BugCard(props) {
         width="90%"
         align="flex-start"
       >
-        <div className='delete-btn'>X</div>
+        <div className='delete-btn' onClick={handleDelete}>X</div>
         <div className="bug-card-title">
           <img
             src={

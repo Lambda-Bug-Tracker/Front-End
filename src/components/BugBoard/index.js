@@ -18,9 +18,7 @@ const BugBoard = (props) => {
   const { id } = useParams()
   const [addingNewBug, setAddingNewBug ] = useState(false)
   const dispatch = useDispatch()
-
-  console.log('history',props.history)
-
+  
   useEffect(() => {
     axios.get(`https://lambda-bug-tracker.herokuapp.com/bugs/${id}`)
       .then(res => {
