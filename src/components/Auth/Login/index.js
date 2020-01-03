@@ -39,18 +39,6 @@ export default function Register() {
   const { register, handleSubmit, errors, getValues } = useForm({
     validationSchema: schema
   });
-<<<<<<< HEAD
- 
-  const handleChange = event => {
-    const values = getValues()
-    console.log(values)
-    // setData({
-    //   ...data,
-    //   [event.target.name]: event.target.value
-    // });
-  };
-=======
->>>>>>> 0890467105cbb7f918e89a61a062b31ed58525b5
 
   const onSubmit = e => {
     e.preventDefault();
