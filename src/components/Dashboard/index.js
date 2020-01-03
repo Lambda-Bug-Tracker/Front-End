@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from "react-router-dom";
 import { Wrapper, Button } from 'bushido-strap';
 import { useDispatch } from 'react-redux';
 import { signOut } from '../../store/actions/auth';
@@ -34,7 +35,7 @@ export default function Dashboard() {
   }
 
   function handleSignOut() {
-    dispatch(logout());
+    dispatch();
   }
   return (
     <Wrapper>
@@ -80,6 +81,8 @@ export default function Dashboard() {
                 </Link>
               </div>
               <Button onClick={handleNewProject}>New Project</Button>
+              </>
+              }
             </div>
           </div>
         </div>
