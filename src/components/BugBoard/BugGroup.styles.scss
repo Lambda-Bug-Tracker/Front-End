@@ -1,8 +1,12 @@
 $phone: "(min-width: 320px) and (max-width: 768px)";
 
+.bug-card {
+  background-color: white;
+}
+
 .bug-group-container {
   width: 100%;
- 
+
   @media #{$phone} {
     display: flex;
     flex-direction: column;
@@ -15,8 +19,6 @@ $phone: "(min-width: 320px) and (max-width: 768px)";
   flex-direction: column;
   justify-content: space-between;
   margin: 3%;
-  
- 
 
   @media #{$phone} {
     max-width: 100%;
@@ -33,9 +35,8 @@ $phone: "(min-width: 320px) and (max-width: 768px)";
   font-family: "Montserrat", sans-serif;
 
   @media #{$phone} {
-    color: #FFFFFF;
+    color: #ffffff;
     margin-left: -10%;
-    
   }
 }
 
@@ -53,11 +54,9 @@ $phone: "(min-width: 320px) and (max-width: 768px)";
 }
 
 .mobile-container {
-
   @media #{$phone} {
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    
   }
 }
