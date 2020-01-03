@@ -27,7 +27,7 @@ export function BugCard(props) {
 
   const handleDelete = e => {
       e.preventDefault()
-      console.log('delete',props.id)
+      console.log('delete',props.item)
     //   axios.delete(`https://lambda-bug-tracker.herokuapp.com/bugs/${id}`)
   }
 
@@ -51,27 +51,30 @@ export function BugCard(props) {
         align="flex-start"
       >
         <div className='delete-btn' onClick={handleDelete}>X</div>
-        <div className="bug-card-title">
-          <img
-            src={
-              props.item.hash_tag === 1
-                ? bee
-                : props.item.hash_tag === 2
-                ? beetle
-                : props.item.hash_tag === 3
-                ? butterfly
-                : null
-            }
-            style={{ width: "20%" }}
-          />
-          <span className="bugname"> {props.item.bug_name} </span>
-        </div>
-
+        <div className='bug-card-wrapper'>
+            <div className="bug-card-title">
+            <img
+                src={
+                props.item.hash_tag === 1
+                    ? bee
+                    : props.item.hash_tag === 2
+                    ? beetle
+                    : props.item.hash_tag === 3
+                    ? butterfly
+                    : null
+                }
+                style={{ width: "20%" }}
+            />
+            <span className="bugname">{props.item.bug_name}</span>
+            </div>
+        <div className='bug-description'>{props.item.description}</div>
+        <span>Priority Level:</span>
         <h5>
           {props.item.priority_tag === 1 && "!"}
           {props.item.priority_tag === 2 && "!!"}
           {props.item.priority_tag === 3 && "!!!"}
         </h5>
+        </div>
       </Card>
     </Link>
   );
