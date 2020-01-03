@@ -66,9 +66,9 @@ export default function LandingPage() {
               <li><a href='#'>About</a></li>
               <li><a href='#'>Team</a></li>
             </ul>
-            <div className='login'>
-              <a className='login' href='/register'>Register</a>
-              <a className='login' href='/login'>Login<ion-icon name="arrow-round-forward"></ion-icon></a>
+            <div className='auth'>
+              <a className='register' href='#'>Register</a>
+              <a className='login' href='#'>Login<ion-icon name="arrow-round-forward"></ion-icon></a>
             </div>
           </nav>
           <div className='hero'>
