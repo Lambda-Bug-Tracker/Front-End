@@ -40,6 +40,7 @@ $phone: "(min-width: 320px) and (max-width: 768px)";
         color: #202020;
         font-family: "Montserrat", sans-serif;
         font-size: 18px;
+        align-self: center;
 
         @media #{$desktop} {
           display: flex;
@@ -52,6 +53,7 @@ $phone: "(min-width: 320px) and (max-width: 768px)";
         display: block;
         width: 50px;
         margin-top: -12px;
+        align-self: center;
       }
     }
   }
