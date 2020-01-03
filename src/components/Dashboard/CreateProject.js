@@ -4,7 +4,7 @@ import {slideInUp} from "react-animations";
 import { useSelector } from 'react-redux'
 import axios from 'axios'
 
-import { Form, Input, Button } from "bushido-strap";
+import { Form, Input } from "bushido-strap";
 
 const slideAnim = keyframes`${slideInUp}`
 
@@ -14,7 +14,6 @@ const FormContainer = styled.div`
     font-weight: normal;
     text-shadow: none;
     width: 220px;
-    /* height: 50px; */
     margin: 30px 10px;
     padding: 10px;
     border: 2px solid #000000;
@@ -86,8 +85,9 @@ export default function CreateProject (props) {
                 value={form.description}
                 onChange={(e) => setForm({...form, [e.target.name]:e.target.value})}
                 />
-            {/* <Input name='title' placeholder="Something else..."/> */}
-            <Button type='submit'>Save</Button>
+
+            <button type='submit'>Save</button>
+
         </Form>
         </FormContainer>
     )
