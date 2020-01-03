@@ -34,31 +34,18 @@ export default function Register() {
 
   const [error, setError] = useState();
 
-  const [data, setData] = useState({
-    first_name: "",
-    last_name: "",
-    email: "",
-    password: ""
-  });
-
-  const { register, handleSubmit, errors } = useForm({
+  const { register, handleSubmit, errors, getValues } = useForm({
     validationSchema: schema
   });
 
-  const handleChange = event => {
-    setData({
-      ...data,
-      [event.target.name]: event.target.value
-    });
-  };
-
   const onSubmit = e => {
-    // e.preventDefault();
+    const data = getValues()
     dispatch(emailRegistration(data));
   };
 
   const handleGoogleAuth = e => {
     e.preventDefault();
+    const data = getValues()
     dispatch(googleRegister(data));
   };
 
@@ -78,8 +65,6 @@ export default function Register() {
             <Input
               type="text"
               name="first_name"
-              value={data.first_name}
-              onChange={handleChange}
               placeholder="First Name"
               ref={register}
             />
@@ -87,8 +72,6 @@ export default function Register() {
             <Input
               type="text"
               name="last_name"
-              value={data.last_name}
-              onChange={handleChange}
               placeholder="Last Name"
               ref={register}
             />
@@ -96,8 +79,6 @@ export default function Register() {
             <Input
               type="text"
               name="email"
-              value={data.email}
-              onChange={handleChange}
               placeholder="Email"
               ref={register}
             />
@@ -105,8 +86,6 @@ export default function Register() {
             <Input
               type="password"
               name="password"
-              value={data.password}
-              onChange={handleChange}
               placeholder="Password"
               ref={register}
             />
