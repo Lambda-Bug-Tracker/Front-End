@@ -9,6 +9,7 @@ import "./menu-styles.styles.scss";
 import BurgerImage from "../../images/black-hamburger-menu.png";
 import { Wrapper, FlexBox } from "bushido-strap";
 import "@animated-burgers/burger-arrow/dist/styles.css";
+import { Link } from "react-router-dom";
 // trying to use this library: https://march08.github.io/animated-burgers/
 
 const HamburgerMenu = () => {
@@ -37,10 +38,10 @@ const HamburgerMenu = () => {
         />
         {openStatus ? (
           <div>
-            <a href="#">About</a>
-            <a href="#">Services</a>
-            <a href="#">Clients</a>
-            <a href="#">Contact</a>
+            <Link to="/">Home</Link>
+            <Link to="/dashboard">Dashboard</Link>
+            <Link to="/login">Login</Link>
+            <Link to="/register">Register</Link>
           </div>
         ) : (
           ""
