@@ -42,6 +42,7 @@ $phone: "(min-width: 320px) and (max-width: 768px)";
 
   .top-container {
     background-color: white;
+    overflow: hidden;
     
 
     @media #{$phone} {
@@ -60,24 +61,26 @@ $phone: "(min-width: 320px) and (max-width: 768px)";
     width: 100%;
 
     @media #{$phone} {
-      display: flex;
-      justify-content: center;
+      display: block;
       background-color: #14131c;
-      
+      text-align: center;     
       
     }
-  }
-  h2 {
-    text-align: left;
-    color: #14131c;
-    font-family: "Montserrat", sans-serif;
-    padding: 20px;
-    
 
-    @media #{$phone} {
-      color: #ffffff;
+    h2 {
+      text-align: left;
+      color: #14131c;
+      font-family: "Montserrat", sans-serif;
+      padding: 20px;
+      
+  
+      @media #{$phone} {
+        color: #ffffff;
+        text-align: center;
+      }
     }
   }
+  
 }
 
 .open {
@@ -86,7 +89,7 @@ $phone: "(min-width: 320px) and (max-width: 768px)";
 /* The side navigation menu */
 .sidenav {
   height: 100%; /* 100% Full-height */
-  width: 150px; /* 0 width - change this with JavaScript */
+  width: 200px; /* 0 width - change this with JavaScript */
   position: fixed; /* Stay in place */
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
