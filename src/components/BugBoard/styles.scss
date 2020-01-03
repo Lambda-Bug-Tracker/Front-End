@@ -25,11 +25,16 @@ $phone: "(min-width: 320px) and (max-width: 768px)";
 }
 
 .bug-board-container {
-  background-color: #14131c;
+  background-color:#FFFFFF;;
   color: white;
   flex-direction: row;
   width: 100%;
   height: 100%;
+
+  .right-container {
+    width: 100%;
+  }
+  
 
   .top-container {
     background-color: white;
@@ -42,11 +47,13 @@ $phone: "(min-width: 320px) and (max-width: 768px)";
   }
 
   main {
-    width: 70%;
-    border: 2px solid red;
+    width: 100%;
+    
+    
   }
   h2 {
     text-align: left;
     margin: 3%;
+    color: #000000;
   }
 }
