@@ -16,20 +16,34 @@ export function BugModal() {
         addedNote: ''
     })
     const [bug, setBug] = useState({
-        name:'the bug',
+        bug_name:'the bug',
         description: 'rerenders constantly',
         notes: ['hello, I am m a note'],
-        priority: 1,
-        bugType: 1
+        priority_tag: 1,
+        progress_tag: 1
 
     })
+    console.log(bug)
     useEffect(() => {
         axios.get(`https://lambda-bug-tracker.herokuapp.com/bugs/specific/${id}`)
         .then(res => {
             console.log(res)
+            setBug({...bug,
+                bug_name: res.data.bugs[0].bug_name,
+                description: res.data.bugs[0].description,
+                priority_tag: res.data.bugs[0].priority_tag,
+                progress_tag: res.data.bugs[0].progress_tag
+            })
         })
         .catch(err => console.log(err))
+        // axios.get(`https://lambda-bug-tracker.herokuapp.com/notes/${id}`)
+        // .then(res => {
+        //     console.log(res)
+        //     setBug({...bug, notes: res.data.notes})
+        // })
+        // .catch(err => console.log(err))
     }, [])
+    
     const handleSubmit = (e) => {
         e.preventDefault()
 
