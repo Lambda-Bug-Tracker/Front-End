@@ -1,49 +1,44 @@
 .modal-card {
   width: 500px;
-  background: white;
-  
+  background: #fff;
+  margin: 0 auto;
+  margin-top: 35vh;
+  width: 500px;
 
-  .bug-description{
-      text-align: center;
-      margin-top: 15px;
+  .bug-description {
+    text-align: center;
+    margin-top: 15px;
   }
 
-  .bug-notes{
+  .bug-notes {
     text-align: left;
 
-    h4{
-        font-size: 1.8rem;
-        font-weight: 700;
-        border-bottom: 1px solid gray;
-        margin-bottom: 5px;
-        
+    h4 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      border-bottom: 1px solid gray;
+      margin-bottom: 5px;
     }
 
-    .addnote-input{
+    .addnote-input {
       height: 100px;
     }
-  
-    }
-  
-  
+  }
+
   .modal-title {
-      border-bottom: 1px solid #ccc;
-      padding: 1rem;
-      margin: 0;
-          
+    border-bottom: 1px solid #ccc;
+    padding: 1rem;
+    margin: 0;
   }
-  
+
   .button-container {
-      background-color: gray;
-      padding: 10px;
+    background-color: gray;
+    padding: 10px;
   }
-  
+}
 
-  }
-
-button{
+.addnotes-button {
   color: #fff;
-  margin-top: 15px;
   margin: 5px;
   padding: 8px 16px;
   background: #bb1333;
