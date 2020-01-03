@@ -86,7 +86,7 @@ export default function AddNewBug (props) {
 
     const handleSubmit = e => {
         e.preventDefault()
-        console.log(form)
+        console.log("form",form)
         axios.post(`https://lambda-bug-tracker.herokuapp.com/bugs/${props.id}`, form)
             .then(res => {
                 console.log(res)
