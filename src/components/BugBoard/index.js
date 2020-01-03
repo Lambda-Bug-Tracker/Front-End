@@ -14,7 +14,8 @@ import { Wrapper, FlexBox } from "bushido-strap";
 
 import UserBar from "../UserBar";
 
-const BugBoard = ({ history }) => {
+const BugBoard = (props) => {
+  console.log("BUGBOARD INDEX PROPS: ", props.history.location.state.title.project_name)
   const { id } = useParams();
   const [addingNewBug, setAddingNewBug] = useState(false);
   const dispatch = useDispatch();
@@ -22,7 +23,6 @@ const BugBoard = ({ history }) => {
     axios
       .get(`https://lambda-bug-tracker.herokuapp.com/bugs/${id}`)
       .then(res => {
-        console.log(res);
         dispatch({ type: UPDATE_BUGS, payload: res.data });
       })
       .catch(err => console.log(err));
@@ -57,13 +57,13 @@ const BugBoard = ({ history }) => {
             <>
               <div className="title-container">
                 <h2>
-                  {history.location.state &&
-                    history.location.state.project_name}
+                  {props.history.location.state.title.project_name ||
+                    props.history.location.state.project_name}
                 </h2>
                 <button onClick={handleAddNewBug}>Add New Bug</button>
               </div>
               <div className="bug-group-container">
-                <BugGroup />
+                <BugGroup {...props} />
               </div>
             </>
           )}
