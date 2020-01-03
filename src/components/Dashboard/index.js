@@ -39,12 +39,12 @@ export default function Dashboard() {
   }
   return (
     <Wrapper>
-      <div className='dashboard'>
+      <div className='background'>
         <div className="main">
           <div className="dashboard">
             <div className="top-row">
               <img src={lambdaBanner} alt="Lambda School Logo" />
-              <Button onClick={handleSignOut}>Sign Out</Button>
+              <button id="sign-out-btn" onClick={handleSignOut}>Sign Out</button>
             </div>
             <div className="main-container">
               <div className="project-group-container">
@@ -81,12 +81,15 @@ export default function Dashboard() {
                     </ProjectCard>
                   </Link>
                 </div>
-                <Button onClick={handleNewProject}>New Project</Button>
+                <button className="new-project-btn" onClick={handleNewProject}>New Project</button>
                 </>
                 }
               </div>
             </div>
           </div>
+          <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+          <polygon points="0 0,100 0,100 100,0 100" />
+        </svg>
         </div>
       </div>
     </Wrapper>

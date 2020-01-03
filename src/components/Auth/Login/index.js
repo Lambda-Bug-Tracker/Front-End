@@ -31,24 +31,18 @@ export default function Register() {
   const isLoggedIn = useSelector(state => !state.firebase.auth.isEmpty);
 
   const [error, setError] = useState();
-  const [data, setData] = useState({
-    email: "",
-    password: ""
-  });
+  // const [data, setData] = useState({
+  //   email: "",
+  //   password: ""
+  // });
 
-  const { register, handleSubmit, errors } = useForm({
+  const { register, handleSubmit, errors, getValues } = useForm({
     validationSchema: schema
   });
 
-  const handleChange = event => {
-    setData({
-      ...data,
-      [event.target.name]: event.target.value
-    });
-  };
-
   const onSubmit = e => {
-    e.preventDefault();
+    const data = getValues()
+    console.log(data)
     dispatch(login());
   };
 
@@ -73,8 +67,6 @@ export default function Register() {
             <Input
               type="text"
               name="email"
-              value={data.email}
-              onChange={handleChange}
               placeholder="Email"
               ref={register}
             />
@@ -82,8 +74,6 @@ export default function Register() {
             <Input
               type="password"
               name="password"
-              value={data.password}
-              onChange={handleChange}
               placeholder="Password"
               ref={register}
             />
