@@ -14,7 +14,7 @@ import butterfly from "../../images/butterfly.png";
 import beetle from "../../images/beetle.png";
 import bee from "../../images/b.png";
 
-import './BugModal.styles.scss';
+import "./BugModal.styles.scss";
 import axios from "axios";
 
 const priorityTest = 3;
@@ -29,10 +29,10 @@ export function BugCard(props) {
   });
 
   const handleDelete = e => {
-      e.preventDefault()
-      console.log('delete',props.item)
+    e.preventDefault();
+    console.log("delete", props.item);
     //   axios.delete(`https://lambda-bug-tracker.herokuapp.com/bugs/${id}`)
-  }
+  };
 
   return (
     <Link to={`/bug-modal/${props.item.id}`}>
@@ -55,32 +55,32 @@ export function BugCard(props) {
         marginLeft="8px"
         marginTop="20px"
       >
-        <div className='delete-btn' onClick={handleDelete}>X</div>
-        <div className='bug-card-wrapper'>
-            <div className="bug-card-title">
+        <div className="delete-btn" onClick={handleDelete}>
+          X
+        </div>
+        <div className="bug-card-wrapper">
+          <div className="bug-card-title">
             <img
-                src={
+              src={
                 props.item.hash_tag === 1
-                    ? bee
-                    : props.item.hash_tag === 2
-                    ? beetle
-                    : props.item.hash_tag === 3
-                    ? butterfly
-                    : null
-                }
-                style={{ width: "20%" }}
+                  ? bee
+                  : props.item.hash_tag === 2
+                  ? beetle
+                  : props.item.hash_tag === 3
+                  ? butterfly
+                  : null
+              }
+              style={{ width: "20%" }}
             />
             <span className="bugname">{props.item.bug_name}</span>
-            </div>
-        <div className='bug-description'>{props.item.description}</div>
-        <span className='bug-priority'>Priority Level:</span>
-        <h5>
-          {props.item.priority_tag === 1 && "!"}
-          {props.item.priority_tag === 2 && "!!"}
-          {props.item.priority_tag === 3 && "!!!"}
-        </h5>
-
-
+          </div>
+          <div className="bug-description">{props.item.description}</div>
+          {/* <span className='bug-priority'>Priority Level:</span> */}
+          <h5>
+            {props.item.priority_tag === 1 && "!"}
+            {props.item.priority_tag === 2 && "!!"}
+            {props.item.priority_tag === 3 && "!!!"}
+          </h5>
         </div>
       </Card>
     </Link>
