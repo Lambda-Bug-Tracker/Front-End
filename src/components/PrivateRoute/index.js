@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import { Route } from "react-router-dom";
 
@@ -8,13 +8,15 @@ import LandingPage from "../LandingPage";
 import Loading from "../Loading";
 
 export default function PrivateRoute({ component: RouteComponent, ...rest }) {
-  const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 1000);
-  }, []);
-  const { token } = useSelector(state => state.auth);
+  const [token, setToken] = useState("");
+
+  useSelector(
+    async state =>
+      (await state.firebase.auth.stsTokenManager) &&
+      state.firebase.auth.stsTokenManager.accessToken
+  ).then(res => setToken(res));
+
+  const loaded = useSelector(state => state.firebase.profile.isLoaded);
 
   return (
     <Route
@@ -22,7 +24,7 @@ export default function PrivateRoute({ component: RouteComponent, ...rest }) {
       render={routeProps => {
         return token ? (
           <RouteComponent {...routeProps} />
-        ) : !loading && !token ? (
+        ) : loaded && !token ? (
           <LandingPage />
         ) : (
           <Loading />

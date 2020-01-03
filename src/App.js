@@ -9,7 +9,6 @@ import Backend from "react-dnd-html5-backend";
 
 import BugBoard from "./components/BugBoard/index.js";
 
-
 // Using custom styled components from Global folder in components
 import { AppWrapper } from "bushido-strap";
 
@@ -23,7 +22,7 @@ const App = () => {
   return (
     <DndProvider backend={Backend}>
       <AppWrapper>
-        <BugBoard />
+        {/* <BugBoard /> */}
         <PrivateRoute path="/" exact component={Dashboard} />
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />

@@ -52,7 +52,7 @@ export const login = data => dispatch => {
 };
 
 /* EMAIL REGISTER ACTION */
-export const register = data => dispatch => {
+export const emailRegistration = data => dispatch => {
   dispatch({ type: REGISTER_START });
   firebase
     .auth()
