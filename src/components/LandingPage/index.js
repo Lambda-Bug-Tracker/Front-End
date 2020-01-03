@@ -19,38 +19,62 @@ import robert from '../../assets/img/robert.png';
 const team1 = [
   {
     image: chris,
-    name: 'Christopher Adams'
+    name: 'Christopher Adams',
+    github: 'https://github.com/cladams0203',
+    linkedin: 'https://www.linkedin.com/in/cladams0203/',
+    twitter: 'https://twitter.com/ChrisAd55717923'
   },
   {
     image: joscelyn,
-    name: 'Joscelyn Owen'
+    name: 'Joscelyn Owen',
+    github: 'https://github.com/Joscelyn1',
+    linkedin: 'https://www.linkedin.com/in/josowen/',
+    twitter: ''
   },
   {
     image: emily,
-    name: 'Emily Bruner'
+    name: 'Emily Bruner',
+    github: '',
+    linkedin: '',
+    twitter: ''
   },
   {
     image: robert,
-    name: 'Robert Gordon'
+    name: 'Robert Gordon',
+    github: 'https://github.com/robertdgordon',
+    linkedin: 'https://www.linkedin.com/in/robert-d-gordon/',
+    twitter: ''
   },
 ]
 
 const team2 = [
   {
     image: aaron,
-    name: 'Aaron Soler'
+    name: 'Aaron Soler',
+    github: 'https://github.com/AaronShawnSoler',
+    linkedin: 'https://www.linkedin.com/in/aaronsoler/',
+    twitter: 'https://twitter.com/TheAaronSoler'
   },
   {
     image: brianna,
-    name: 'Brianna Keune'
+    name: 'Brianna Keune',
+    github: 'https://github.com/briannakeune',
+    linkedin: 'https://www.linkedin.com/in/brianna-keune/',
+    twitter: 'https://twitter.com/BriannaKeune'
   },
   {
     image: tommy,
-    name: 'Tommy Kindle'
+    name: 'Tommy Kindle',
+    github: '',
+    linkedin: '',
+    twitter: ''
   },
   {
     image: jimmy,
-    name: 'Jimmy McBride'
+    name: 'Jimmy McBride',
+    github: '',
+    linkedin: '',
+    twitter: ''
   },
 ]
 

@@ -103,7 +103,7 @@
       .register {
         color: #fff;
       }
-      
+
       .login {
         margin-left: auto;
         color: #fff;
@@ -320,10 +320,8 @@
     display: flex;
     justify-content: center;
 
-    ion-icon {
-      font-size: 3.2rem;
-      transition: 0.25s ease-in-out;
-      margin: 0 8px;
+    a {
+      color: #acb2cc;
 
       &:nth-child(1):hover {
         color: #24292e;
@@ -336,6 +334,12 @@
       &:nth-child(3):hover {
         color: #1da1f2;
       }
+    }
+
+    ion-icon {
+      font-size: 3.2rem;
+      transition: 0.25s ease-in-out;
+      margin: 0 8px;
 
       &:hover {
         cursor: pointer;
