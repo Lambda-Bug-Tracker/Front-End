@@ -9,14 +9,22 @@ const HamburgerMenu = () => {
   const handleClick = () => {
     console.log("clicked");
     setOpenStatus(!openStatus);
+    //closeNav()
   };
   return (
     <div className="hamburger-container">
-      <Burger
-        direction="right"
-        onClick={() => handleClick()}
-        isOpen={openStatus}
-      />
+      <div id="mySidenav" class="sidenav">
+        <Burger
+          direction="right"
+          onClick={() => handleClick()}
+          isOpen={openStatus}
+        />
+
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+      </div>
     </div>
   );
 };
