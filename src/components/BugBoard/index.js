@@ -45,22 +45,26 @@ const BugBoard = ({ history }) => {
             <img className="logo" alt="logo" src={Logo} />
             <HamburgerMenu />
           </div>
-          {addingNewBug ? (
-            <AddNewBug id={id} setAddingNewBug={setAddingNewBug} />
-          ) : (
-            <>
-              <div className="title-container">
-                <h2>
-                  {history.location.state &&
+
+            {addingNewBug ? (
+              <AddNewBug id={id} setAddingNewBug={setAddingNewBug} />
+            ) : (
+              <>
+                <div className="title-container">
+                  <h2>
+                  {history.location.state && history.location.state.title && history.location.state.title.project_name ||
                     history.location.state.project_name}
-                </h2>
-                <button onClick={handleAddNewBug}>Add New Bug</button>
-              </div>
-              <div className="bug-group-container">
-                <BugGroup />
-              </div>
-            </>
-          )}
+                    
+                  </h2>
+                  <button onClick={handleAddNewBug}>Add New Bug</button>
+                </div>
+                <div className="bug-group-container">
+                  <BugGroup />
+                </div>
+              </>
+            )}
+
+
         </div>
       </div>
     </Wrapper>
