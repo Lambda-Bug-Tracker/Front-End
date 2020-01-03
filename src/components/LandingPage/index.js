@@ -1,5 +1,6 @@
 import React from "react";
-import Profile from "./profile";
+import { Link } from 'react-router-dom';
+import Profile from './profile';
 
 import "../../assets/css/landing.css";
 import lambdaBanner from "../../assets/img/lambda-banner.png";
@@ -14,45 +15,68 @@ import jimmy from "../../assets/img/jimmy.png";
 import joscelyn from "../../assets/img/joscelyn.png";
 import tommy from "../../assets/img/tommy.png";
 import robert from "../../assets/img/robert.png";
-import { Link } from "react-router-dom";
 
 const team1 = [
   {
     image: chris,
-    name: "Christopher Adams"
+    name: 'Christopher Adams',
+    github: 'https://github.com/cladams0203',
+    linkedin: 'https://www.linkedin.com/in/cladams0203/',
+    twitter: 'https://twitter.com/ChrisAd55717923'
   },
   {
     image: joscelyn,
-    name: "Joscelyn Owen"
+    name: 'Joscelyn Owen',
+    github: 'https://github.com/Joscelyn1',
+    linkedin: 'https://www.linkedin.com/in/josowen/',
+    twitter: ''
   },
   {
     image: emily,
-    name: "Emily Bruner"
+    name: 'Emily Bruner',
+    github: '',
+    linkedin: '',
+    twitter: ''
   },
   {
     image: robert,
-    name: "Robert Gordon"
-  }
-];
+    name: 'Robert Gordon',
+    github: 'https://github.com/robertdgordon',
+    linkedin: 'https://www.linkedin.com/in/robert-d-gordon/',
+    twitter: ''
+  },
+]
 
 const team2 = [
   {
     image: aaron,
-    name: "Aaron Soler"
+    name: 'Aaron Soler',
+    github: 'https://github.com/AaronShawnSoler',
+    linkedin: 'https://www.linkedin.com/in/aaronsoler/',
+    twitter: 'https://twitter.com/TheAaronSoler'
   },
   {
     image: brianna,
-    name: "Brianna Keune"
+    name: 'Brianna Keune',
+    github: 'https://github.com/briannakeune',
+    linkedin: 'https://www.linkedin.com/in/brianna-keune/',
+    twitter: 'https://twitter.com/BriannaKeune'
   },
   {
     image: tommy,
-    name: "Tommy Kindle"
+    name: 'Tommy Kindle',
+    github: '',
+    linkedin: '',
+    twitter: ''
   },
   {
     image: jimmy,
-    name: "Jimmy McBride"
-  }
-];
+    name: 'Jimmy McBride',
+    github: '',
+    linkedin: '',
+    twitter: ''
+  },
+]
 
 export default function LandingPage() {
   return (
@@ -64,27 +88,13 @@ export default function LandingPage() {
               <img src={lambdaBanner} alt="lambda school logo" />
             </a>
             <ul>
-              <li>
-                <a href="#">Home</a>
-              </li>
-              <li>
-                <a href="#">Features</a>
-              </li>
-              <li>
-                <a href="#">About</a>
-              </li>
-              <li>
-                <a href="#">Team</a>
-              </li>
-              <Link to="/dashboard">Dashboard</Link>
+              <li><a href='#features'>Features</a></li>
+              <li><a href='#about'>About</a></li>
+              <li><a href='#team'>Team</a></li>
             </ul>
-            <div className="auth">
-              <Link className="register" to="/register">
-                Register
-              </Link>
-              <Link className="login" to="/login">
-                Login<ion-icon name="arrow-round-forward"></ion-icon>
-              </Link>
+            <div className='auth'>
+              <Link className='register' to='/register'>Register</Link>
+              <Link className='login' to='login'>Login<ion-icon name="arrow-round-forward"></ion-icon></Link>
             </div>
           </nav>
           <div className="hero">
@@ -103,9 +113,9 @@ export default function LandingPage() {
           <polygon points="0 0,100 0,100 100,0 100" />
         </svg>
       </header>
-      <section className="about-features">
-        <div className="row">
-          <div className="text-container">
+      <section id='features' className='about-features'>
+        <div className='row'>
+          <div className='text-container'>
             <h2>Organized Solutions</h2>
             <p>
               With our feature set you and your team can create <br /> efficient
@@ -141,8 +151,8 @@ export default function LandingPage() {
               </p>
             </div>
           </div>
-          <div className="about-container">
-            <div className="about-info">
+          <div className='about-container'>
+            <div id='about' className='about-info'>
               <h2>About Bug Tracker</h2>
               <p>
                 Bug tracker was built to help teams maintain an effective
@@ -156,7 +166,7 @@ export default function LandingPage() {
           </div>
         </div>
       </section>
-      <section className="team">
+      <section id='team' className='team'>
         <h2>Our Team</h2>
         <div className="team-row-1">
           {team1.map(element => (
