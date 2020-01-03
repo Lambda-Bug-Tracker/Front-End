@@ -57,7 +57,7 @@ export function BugModal() {
         <Card className='modal-card'>
             {!form.isAdmin &&
                 <div>
-                <h3 className="modal-title"> {bug.name} </h3>
+                <h3 className="modal-title"> {bug.bug_name} </h3>
                 <p className='bug-description'>{bug.description}</p>
                 
                 <p> {bug.priority} </p>
