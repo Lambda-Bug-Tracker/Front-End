@@ -7,18 +7,21 @@ import lambdaBanner from '../../assets/img/lambda-banner.png';
 import "./styles.scss";
 
 import styled, { keyframes } from "styled-components";
-import {flipInX} from "react-animations";
+import {flipInX, tada} from "react-animations";
 
 const flipAnim = keyframes`${flipInX}`;
+const tadaAnim = keyframes`${tada}`;
 
 const randomDuration = () =>{
   let random = Math.floor(Math.random() * (6000 - 800)) + 500;
-  console.log(random)
   return random
 }
 
 const ProjectCard = styled.div`
   animation: ${()=> randomDuration()}ms ${flipAnim};
+  &:hover{
+            animation: 1s ${tadaAnim};
+        }
 `
 
 export default function Dashboard() {
