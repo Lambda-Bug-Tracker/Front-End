@@ -41,6 +41,7 @@ export default function Register() {
   });
 
   const onSubmit = e => {
+    e.preventDefault();
     const data = getValues()
     console.log(data)
     dispatch(login());
