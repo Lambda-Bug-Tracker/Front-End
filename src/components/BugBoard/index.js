@@ -28,7 +28,7 @@ const BugBoard = () => {
         <FlexBox className="top-container" justify-content="center" width="100%">
           <FlexBox className="header-container" width="100%">
             <h1>Lambda Bug Tracker </h1>
-              <img className="logo" alt="logo" src={Logo} />
+            <img className="logo" alt="logo" src={Logo} />
           </FlexBox>
           <HamburgerMenu />
         </FlexBox>

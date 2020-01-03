@@ -22,8 +22,20 @@ const FormContainer = styled.div`
     justify-content: center;
     align-items: center;
     margin-top: -150px;
+    @media screen and (max-width: 768px) {
+        margin-top: 50px;
+    }
+    position: relative;
+    .cancel{
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 5px;
+        color: black;
+        cursor: pointer;
+    }
     input{
-        margin-top: 10px;
+        margin-top: 20px;
     }
     button{
         width: 150px;
@@ -38,6 +50,11 @@ const FormContainer = styled.div`
 
 export default function AddNewBug (props) {
 
+    const handleCancel = e => {
+        e.preventDefault()
+        props.setAddingNewBug(false)
+    }
+
     const handleSubmit = e => {
         e.preventDefault()
         props.setAddingNewBug(false)
@@ -45,6 +62,7 @@ export default function AddNewBug (props) {
 
     return(
         <FormContainer>
+        <div className='cancel' onClick={handleCancel}>X</div>
         <Form onSubmit={handleSubmit}>
             <Input name='title' placeholder="Bug Title"/>
             <Input name='title' placeholder="Bug Name"/>
