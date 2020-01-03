@@ -38,7 +38,6 @@ export default function Dashboard() {
             <img src={lambdaBanner} alt="Lambda School Logo" />
             <Button onClick={handleSignOut}>Sign Out</Button></div>
             <div className='main-container'>
-              
               <div className="project-group-container">
               <h2>Welcome First_Name Last_Name!</h2>
               <h4 className="projecth4">These are your projects:</h4>
@@ -64,7 +63,7 @@ export default function Dashboard() {
               </div>
             </div>
         </div>
-      <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+        <svg viewBox="0 0 100 100" preserveAspectRatio="none">
           <polygon points="0 0,100 0,100 100,0 100" />
         </svg>
       </div>

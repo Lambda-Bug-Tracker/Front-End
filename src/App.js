@@ -24,10 +24,10 @@ const App = () => {
     <DndProvider backend={Backend}>
       <AppWrapper>
         {/* <BugBoard /> */}
-        <Dashboard />
-        {/* <PrivateRoute path="/" exact component={Dashboard} />
+        {/* <Dashboard /> */}
+        <PrivateRoute path="/" exact component={Dashboard} />
         <Route path="/login" component={Login} />
-        <Route path="/register" component={Register} /> */}
+        <Route path="/register" component={Register} />
       </AppWrapper>
     </DndProvider>
   );
