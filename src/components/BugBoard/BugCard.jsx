@@ -5,8 +5,10 @@
 /*on click -- brings up modal of notes*/
 
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import { useDrag } from 'react-dnd'
+
 
 import { Card } from 'bushido-strap'
 import butterfly from '../../images/butterfly.png'
@@ -17,6 +19,7 @@ const typeTest = 3
 
 
 export function BugCard(props) {
+    
     const [{isDragging}, drag] = useDrag({
         item: {type: 'CARD', item: props.item},
         collect: monitor => ({
@@ -24,6 +27,7 @@ export function BugCard(props) {
         })
     })
     return(
+        <Link to={`/bug-modal/${props.item.id}`}>
         <Card ref={drag} style={{
             opacity: isDragging ? 0.5 : 1,
             boxShadow: priorityTest === 1 ? '0 0.3rem 1rem red' :
@@ -38,12 +42,14 @@ export function BugCard(props) {
                 typeTest === 3 ? butterfly:
                 null
             }  style={{width: '20%'}}/> 
-            <span> {props.name} Bug Name </span>
+            <span> {props.item.name}  </span>
             </div>
         
-           <p> {props.description} Bug Description </p> 
+           <p> {props.item.description} </p> 
         <h5>{priorityTest === 1 && '!'}{priorityTest === 2 && '!!'}{priorityTest === 3 && '!!!'}</h5>
+        
         </Card>
+        </Link>
     )
 }
 
