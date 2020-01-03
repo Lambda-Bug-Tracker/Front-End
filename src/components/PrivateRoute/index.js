@@ -23,7 +23,7 @@ export default function PrivateRoute({ component: RouteComponent, ...rest }) {
       {...rest}
       render={routeProps => {
         return token ? (
-          <RouteComponent {...routeProps} {...rest}/>
+          <RouteComponent {...routeProps} />
         ) : loaded && !token ? (
           <LandingPage />
         ) : (
