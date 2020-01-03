@@ -3,8 +3,23 @@ import { Wrapper, Button } from 'bushido-strap';
 import { useDispatch } from 'react-redux';
 import { signOut } from '../../store/actions/auth';
 
-import lambdaBanner from '../../assets/img/lambda-banner.png'
+import lambdaBanner from '../../assets/img/lambda-banner.png';
 import "./styles.scss";
+
+import styled, { keyframes } from "styled-components";
+import {flipInX} from "react-animations";
+
+const flipAnim = keyframes`${flipInX}`;
+
+const randomDuration = () =>{
+  let random = Math.floor(Math.random() * (6000 - 800)) + 500;
+  console.log(random)
+  return random
+}
+
+const ProjectCard = styled.div`
+  animation: ${()=> randomDuration()}ms ${flipAnim};
+`
 
 export default function Dashboard() {
   const dispatch = useDispatch();
@@ -25,21 +40,21 @@ export default function Dashboard() {
               <h4 className="projecth4">These are your projects:</h4>
                 <div className="project-group">
                   {/* Map over user projects here */}
-                    <div className="project-card">
+                    <ProjectCard className="project-card">
                       Project_Name
-                    </div>
-                    <div className="project-card">
+                    </ProjectCard>
+                    <ProjectCard className="project-card">
                       Project_Name
-                    </div>
-                    <div className="project-card">
+                    </ProjectCard>
+                    <ProjectCard className="project-card">
                       Project_Name
-                    </div>
-                    <div className="project-card">
+                    </ProjectCard>
+                    <ProjectCard className="project-card">
                       Project_Name
-                    </div>
-                    <div className="project-card">
+                    </ProjectCard>
+                    <ProjectCard className="project-card">
                       Project_Name
-                    </div>
+                    </ProjectCard>
                 </div>
                 <Button>New Project</Button>
               </div>
