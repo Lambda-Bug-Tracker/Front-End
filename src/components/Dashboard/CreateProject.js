@@ -4,7 +4,7 @@ import {slideInUp} from "react-animations";
 import { useSelector } from 'react-redux'
 import axios from 'axios'
 
-import { Form, Input, Button } from "bushido-strap";
+import { Form, Input } from "bushido-strap";
 
 const slideAnim = keyframes`${slideInUp}`
 
@@ -14,7 +14,6 @@ const FormContainer = styled.div`
     font-weight: normal;
     text-shadow: none;
     width: 220px;
-    /* height: 50px; */
     margin: 30px 10px;
     padding: 10px;
     border: 2px solid #000000;
@@ -50,16 +49,13 @@ export default function CreateProject (props) {
         name: '',
         description: '',
 
-<<<<<<< HEAD
     })
     const firebase = useSelector(state => state.firebase)
-=======
     const handleCancel = e => {
         e.preventDefault()
         props.setIsCreating(false)
     }
 
->>>>>>> master
     const handleSubmit = e => {
         e.preventDefault()
         axios.post(`https://lambda-bug-tracker.herokuapp.com/projects/${firebase.auth.uid}`, form)
@@ -75,7 +71,6 @@ export default function CreateProject (props) {
         <FormContainer>
             <div className='cancel' onClick={handleCancel}>X</div>
         <Form onSubmit={handleSubmit}>
-<<<<<<< HEAD
             <Input 
                 name='name' 
                 placeholder="Project Title"
@@ -90,12 +85,7 @@ export default function CreateProject (props) {
                 value={form.description}
                 onChange={(e) => setForm({...form, [e.target.name]:e.target.value})}
                 />
-            {/* <Input name='title' placeholder="Something else..."/> */}
-            <Button type='submit'>Save</Button>
-=======
-            <Input name='title' placeholder="Project Title"/>
             <button type='submit'>Save</button>
->>>>>>> master
         </Form>
         </FormContainer>
     )

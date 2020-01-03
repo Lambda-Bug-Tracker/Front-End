@@ -64,7 +64,7 @@ export default function Dashboard() {
             </div>
             <div className="main-container">
               <div className="project-group-container">
-                <h2>Welcome {firebase.auth.displayName}</h2>
+                <h2>Welcome {firebase.auth.displayName}!</h2>
                 {isCreating ? <CreateProject setIsCreating={setIsCreating} setProjects={setProjects}/> : 
                 <>
                 <h4 className="projecth4">These are your projects:</h4>
@@ -81,31 +81,6 @@ export default function Dashboard() {
                       </Link>
                     )
                   })}
-                  {/* <Link to="/project">
-                    <ProjectCard className="project-card">
-                      Project_Name
-                    </ProjectCard>
-                  </Link>
-                  <Link to="/project">
-                    <ProjectCard className="project-card">
-                      Project_Name
-                    </ProjectCard>
-                  </Link>
-                  <Link to="/project">
-                    <ProjectCard className="project-card">
-                      Project_Name
-                    </ProjectCard>
-                  </Link>
-                  <Link to="/project">
-                    <ProjectCard className="project-card">
-                      Project_Name
-                    </ProjectCard>
-                  </Link>
-                  <Link to="/project">
-                    <ProjectCard className="project-card">
-                      Project_Name
-                    </ProjectCard>
-                  </Link> */}
                 </div>
                 <button className="new-project-btn" onClick={handleNewProject}>New Project</button>
                 </>
@@ -114,8 +89,8 @@ export default function Dashboard() {
             </div>
           </div>
           <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-          <polygon points="0 0,100 0,100 100,0 100" />
-        </svg>
+            <polygon points="0 0,100 0,100 100,0 100" />
+          </svg>
         </div>
       </div>
     </Wrapper>
