@@ -1,6 +1,6 @@
 import React from "react";
 import { Wrapper, FlexBox } from "bushido-strap";
-import { BugCard } from './BugCard'
+
 
 
 import Column1 from './Columns/Column1';
