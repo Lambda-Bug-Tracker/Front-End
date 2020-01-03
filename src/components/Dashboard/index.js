@@ -31,13 +31,11 @@ export default function Dashboard(props) {
   const dispatch = useDispatch();
   const firebase = useSelector(state => state.firebase)
   const [projects, setProjects] = useState()
-  // console.log(projects)
-  // console.log(props)
+ 
   useEffect(() => {
     setTimeout(() => {
       axios.get(`https://lambda-bug-tracker.herokuapp.com/projects/${firebase.auth.uid}`)
     .then(res => {
-      // console.log(res)
       setProjects(res.data.projects)
       props.setProjects(res.data.projects)
     })
@@ -74,7 +72,12 @@ export default function Dashboard(props) {
                   {/* Map over user projects here */}
                   {projects && projects.map((item, index) => {
                     return (
-                      <Link key={index} title={item.project_name} to={`/project/${item.project_id}`}>
+                      <Link
+                       key={index}
+                        to={{
+                          pathname:`/project/${item.project_id}`,
+                          state: { title: item}
+                        }}>
                         <ProjectCard className="project-card">
                           <h3>{item.project_name}</h3>
                           <p>{item.description}</p>
