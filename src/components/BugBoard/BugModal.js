@@ -4,6 +4,7 @@ populates with data*/
 import React, { useState } from 'react'
 import { useParams } from 'react-router';
 import { Card, Form, Input } from 'bushido-strap'
+import './BugModal.styles.scss';
 
 
 export function BugModal() {
@@ -28,11 +29,11 @@ export function BugModal() {
     console.log(form)
     console.log(bug)
     return(
-        <Card>
+        <Card className='modal-card'>
             {!form.isAdmin &&
                 <div>
-                <h3> {bug.name} </h3>
-                <p>{bug.description}</p>
+                <h3 className="modal-title"> {bug.name} </h3>
+                <p className='bug-description'>{bug.description}</p>
                 
                 <p> {bug.priority} </p>
                 <p> {bug.bugType} </p>
@@ -67,7 +68,8 @@ export function BugModal() {
                     onChange={(e) => setBug({...bug, [e.target.name]:e.target.value})}
                 />
                 }
-                <div> Notes :
+                <div className='bug-notes'> 
+                    <h4>Notes :</h4>
                     {bug.notes.map((item, index) => {
                     return <p key={index}>{item}</p>
                     })}
@@ -75,6 +77,7 @@ export function BugModal() {
                 
                 {form.editNotes &&
                     <Input 
+                    className="addnote-input"
                         placeholder='Add Note'
                         value={form.addedNote}
                         name='addedNote'
@@ -83,7 +86,7 @@ export function BugModal() {
                         }}
                     />
                 } 
-                <div>
+                <div >
                 {form.editNotes ? 
                     <button onClick={(e) => {
                         e.preventDefault()
@@ -93,7 +96,7 @@ export function BugModal() {
                         })
                         setForm({...form, addedNote:'', editNotes: false})
                     }}>Add</button> :
-                    <button onClick={(e) => {
+                    <button className="addnotes-button" onClick={(e) => {
                         e.preventDefault()
                         setForm({
                             ...form, 

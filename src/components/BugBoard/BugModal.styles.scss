@@ -1,7 +1,7 @@
 .modal-card {
   width: 500px;
   background: white;
-  border: 1px solid #ccc;
+  
 
   .bug-description{
       text-align: center;
@@ -14,29 +14,41 @@
     h4{
         font-size: 1.8rem;
         font-weight: 700;
-     margin-bottom: 5px;
-    }
-  }
-
-  .addnote-input{
-    height: 100px;
-  }
-
-  }
-
-
-.modal-title {
-    border-bottom: 1px solid #ccc;
-    padding: 1rem;
-    margin: 0;
+        border-bottom: 1px solid gray;
+        margin-bottom: 5px;
         
+    }
+
+    .addnote-input{
+      height: 100px;
+    }
+  
+    }
+  
+  
+  .modal-title {
+      border-bottom: 1px solid #ccc;
+      padding: 1rem;
+      margin: 0;
+          
+  }
+  
+  .button-container {
+      background-color: gray;
+      padding: 10px;
+  }
+  
+
+  }
+
+  
+
+  .addnotes-button{
+    color: #fff;
+    margin: 5px;
+    padding: 8px 16px;
+    background: #bb1333;
+    border: 0;
+    cursor: pointer;
 }
-
-.button-container {
-    background-color: gray;
-    padding: 10px;
-}
-
-
-
 
