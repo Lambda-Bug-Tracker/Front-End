@@ -6,8 +6,6 @@ $phone: "(min-width: 320px) and (max-width: 768px)";
   @media #{$phone} {
     display: flex;
     flex-direction: column;
-   
-    
   }
 }
 
