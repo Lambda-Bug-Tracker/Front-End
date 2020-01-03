@@ -1,5 +1,7 @@
 $phone: "(min-width: 320px) and (max-width: 768px)";
 
+
+
 .bug-card {
   background-color: white;
   width: 170px;
@@ -14,6 +16,10 @@ $phone: "(min-width: 320px) and (max-width: 768px)";
   @media #{$phone} {
     display: flex;
     flex-direction: column;
+  }
+  a{
+    margin-left: 8px;
+    margin-top: 20px;
   }
 }
 
