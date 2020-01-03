@@ -23,6 +23,8 @@ export function BugModal() {
         progress_tag: 1
 
     })
+    const [notes, setNotes] = useState()
+    console.log(notes)
     console.log(bug)
     useEffect(() => {
         axios.get(`https://lambda-bug-tracker.herokuapp.com/bugs/specific/${id}`)
@@ -35,13 +37,16 @@ export function BugModal() {
                 progress_tag: res.data.bugs[0].progress_tag
             })
         })
+        .then(
+            axios.get(`https://lambda-bug-tracker.herokuapp.com/notes/${id}`)
+            .then(res => {
+                console.log(res)
+                setNotes(res.data.notes)
+            })
+            .catch(err => console.log(err))
+        )
         .catch(err => console.log(err))
-        // axios.get(`https://lambda-bug-tracker.herokuapp.com/notes/${id}`)
-        // .then(res => {
-        //     console.log(res)
-        //     setBug({...bug, notes: res.data.notes})
-        // })
-        // .catch(err => console.log(err))
+        
     }, [])
     
     const handleSubmit = (e) => {
@@ -91,7 +96,7 @@ export function BugModal() {
                 }
                 <div className='bug-notes'> 
                     <h4>Notes :</h4>
-                    {bug.notes.map((item, index) => {
+                    {notes && notes.map((item, index) => {
                     return <p key={index}>{item}</p>
                     })}
                 </div>
@@ -111,10 +116,7 @@ export function BugModal() {
                 {form.editNotes ? 
                     <button onClick={(e) => {
                         e.preventDefault()
-                        setBug({
-                            ...bug,
-                            notes:[...bug.notes, form.addedNote]
-                        })
+                        setNotes([...notes, form.addedNote])
                         setForm({...form, addedNote:'', editNotes: false})
                     }}>Add</button> :
                     <button className="addnotes-button" onClick={(e) => {
