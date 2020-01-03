@@ -20,7 +20,6 @@ $phone: "(min-width: 320px) and (max-width: 768px)";
     @media #{$phone} {
       overflow-x: hidden;
     }
-    
   }
   .top-container {
     background-color: white;
@@ -36,12 +35,12 @@ $phone: "(min-width: 320px) and (max-width: 768px)";
       font-size: 5rem;
       color: black;
       max-width: 100%;
-    
+
       h1 {
         color: #202020;
         font-family: "Montserrat", sans-serif;
         font-size: 18px;
-    
+
         @media #{$desktop} {
           display: flex;
           font-size: 24px;
@@ -58,14 +57,14 @@ $phone: "(min-width: 320px) and (max-width: 768px)";
   }
 
   /* Title and Add New Bug Button */
-  .title-container{
+  .title-container {
     // border: 1px solid red;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-top: 120px;
-    button{
+    button {
       color: #fff;
       margin: 5px;
       padding: 16px 32px;
@@ -82,16 +81,14 @@ $phone: "(min-width: 320px) and (max-width: 768px)";
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
 
     @media #{$phone} {
       display: block;
       background-color: #14131c;
       text-align: center;
-      height: 150vh;  
-      width: 100vw;   
+      height: 150vh;
+      width: 100vw;
       margin-top: -25%;
-      
     }
 
     h2 {
@@ -99,15 +96,13 @@ $phone: "(min-width: 320px) and (max-width: 768px)";
       color: #14131c;
       font-family: "Montserrat", sans-serif;
       padding: 20px;
-      
-  
+
       @media #{$phone} {
         color: #ffffff;
         text-align: center;
       }
     }
   }
-  
 }
 
 .open {
@@ -121,11 +116,10 @@ $phone: "(min-width: 320px) and (max-width: 768px)";
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
   right: 0;
-  background-color: #202020; /* Black*/
+  background-color: #14131c; /* blue-black*/
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 60px; /* Place content 60px from the top */
   transition: 1s; /* 0.5 second transition effect to slide in the sidenav */
-  
 }
 
 /* The navigation menu links */
@@ -136,7 +130,6 @@ $phone: "(min-width: 320px) and (max-width: 768px)";
   color: #818181;
   display: block;
   transition: 0.3s;
-  
 
   @media #{$phone} {
     font-size: 16px;
@@ -155,7 +148,6 @@ $phone: "(min-width: 320px) and (max-width: 768px)";
   right: 0;
   font-size: 36px;
   margin-right: 50px;
-  
 }
 
 .hamburger-picture-container {
