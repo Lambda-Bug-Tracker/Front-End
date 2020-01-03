@@ -26,19 +26,20 @@ const ProjectCard = styled.div`
   }
 `;
 
-export default function Dashboard() {
+export default function Dashboard(props) {
   const [isCreating, setIsCreating] = useState(false);
   const dispatch = useDispatch();
   const firebase = useSelector(state => state.firebase)
   const [projects, setProjects] = useState()
-  console.log(projects)
-
+  // console.log(projects)
+  // console.log(props)
   useEffect(() => {
     setTimeout(() => {
       axios.get(`https://lambda-bug-tracker.herokuapp.com/projects/${firebase.auth.uid}`)
     .then(res => {
       // console.log(res)
       setProjects(res.data.projects)
+      props.setProjects(res.data.projects)
     })
     .catch(err => console.log(err))
     }, 500)
@@ -73,7 +74,7 @@ export default function Dashboard() {
                   {/* Map over user projects here */}
                   {projects && projects.map((item, index) => {
                     return (
-                      <Link key={index} to='/project'>
+                      <Link key={index} to={`/project/${item.project_id}`}>
                         <ProjectCard className="project-card">
                           <h3>{item.project_name}</h3>
                           <p>{item.description}</p>

@@ -1,4 +1,4 @@
-import { UPDATE_BUGSTOSQUASH, UPDATE_SQUASHING, UPDATE_REVIEW, UPDATE_SQUASHED } from '../actions/projectBugs'
+import { UPDATE_BUGSTOSQUASH, UPDATE_SQUASHING, UPDATE_REVIEW, UPDATE_SQUASHED, UPDATE_BUGS } from '../actions/projectBugs'
 
 const initialState = {
     bugsToSquash:[{name:'Bad Bug',
@@ -23,6 +23,8 @@ const initialState = {
 
 export const projectBugs = (state = initialState, action) => {
     switch (action.type) {
+        case UPDATE_BUGS :
+            return action.payload
         case UPDATE_BUGSTOSQUASH :
             return {
                 ...state,

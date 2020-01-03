@@ -85,7 +85,9 @@ export default function CreateProject (props) {
                 value={form.description}
                 onChange={(e) => setForm({...form, [e.target.name]:e.target.value})}
                 />
+
             <button type='submit'>Save</button>
+
         </Form>
         </FormContainer>
     )

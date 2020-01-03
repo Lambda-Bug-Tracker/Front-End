@@ -1,6 +1,9 @@
 /* holds -- state of bugs of that project and drag and drop. renders: state columns bug cards*/
 
-import React, {useState} from "react";
+import React, { useState, useEffect } from "react";
+import { useParams } from 'react-router'
+import axios from 'axios'
+import { updateBugs } from '../../store/actions/projectBugs'
 import BugGroup from "./BugGroup.jsx";
 import AddNewBug from "./AddNewBug";
 import Logo from "../../images/tilt-left.png";
@@ -11,8 +14,17 @@ import { Wrapper, FlexBox } from "bushido-strap";
 import UserBar from "../UserBar";
 
 const BugBoard = () => {
-
+  const { id } = useParams()
   const [addingNewBug, setAddingNewBug ] = useState(false)
+  useEffect(() => {
+    axios.get(`https://lambda-bug-tracker.herokuapp.com/bugs/${id}`)
+      .then(res => {
+        console.log(res)
+        updateBugs(res.data)
+       
+      })
+      .catch(err => console.log(err))
+  }, [])
 
   const handleAddNewBug = e => {
     e.preventDefault();
