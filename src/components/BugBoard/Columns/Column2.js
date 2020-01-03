@@ -34,9 +34,9 @@ const Column2 = () => {
     <div className="bug-group">
         <h4 className="progressh4">Currently Squashing</h4>
         <div className="progress-column" ref={drop}>
-            {data.squashing.map((item, index) => {
+            {/* {data.squashing.map((item, index) => {
                 return <BugCard item={item} key={index} />
-            })}
+            })} */}
         </div>
     </div>
 )

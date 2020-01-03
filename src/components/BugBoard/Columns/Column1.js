@@ -1,7 +1,7 @@
 
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import {UPDATE_BUGSTOSQUASH} from '../../../store/actions/projectBugs'
+import { UPDATE_BUGSTOSQUASH } from '../../../store/actions/projectBugs'
 import { useDrop } from 'react-dnd'
 
 
