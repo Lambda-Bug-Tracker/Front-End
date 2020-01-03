@@ -42,6 +42,7 @@ export function BugCard(props) {
         width="90%"
         align="flex-start"
       >
+        <div className='delete-btn'>X</div>
         <div className="bug-card-title">
           <img
             src={
