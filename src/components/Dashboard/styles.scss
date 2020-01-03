@@ -1,0 +1,19 @@
+.main {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    background: #bb1333;
+    overflow: hidden;
+    color: #333;
+    z-index: 1;
+  }
+
+.main svg {
+    position: absolute;
+    left: 0;
+    fill: #fff;
+    height: 200vh;
+    width: 100%;
+    transform: translateX(-50%) translateY(-70%) rotate(15deg) scale(1.75);
+    z-index: -1;
+}
