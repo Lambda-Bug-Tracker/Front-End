@@ -2,17 +2,17 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 
-import Loading from "../../Loading/";
 import lambdaBanner from "../../../assets/img/lambda-banner.png";
 
 import { Form, Input, Button } from "bushido-strap";
 
 import "./styles.scss";
 
-import { useDispatch } from "react-redux";
-import { useHistory } from "react-router";
+import { useDispatch, useSelector } from "react-redux";
 
-import { authenticate } from "../../../store/actions/auth";
+import { Redirect } from "react-router-dom";
+
+import { login, googleLogin } from "../../../store/actions/auth";
 
 const schema = yup.object().shape({
   email: yup
@@ -27,9 +27,9 @@ const schema = yup.object().shape({
 
 export default function Register() {
   const dispatch = useDispatch();
-  const history = useHistory();
 
-  const [isLoading, setIsLoading] = useState(false);
+  const isLoggedIn = useSelector(state => !state.firebase.auth.isEmpty);
+
   const [error, setError] = useState();
   const [data, setData] = useState({
     email: "",
@@ -47,25 +47,28 @@ export default function Register() {
     });
   };
 
-  const onSubmit = data => {
-    console.log(data);
-    setIsLoading(true);
-    dispatch(authenticate());
-    history.push("/");
+  const onSubmit = e => {
+    e.preventDefault();
+    dispatch(login());
   };
 
+  const handleGoogleLogin = e => {
+    e.preventDefault();
+    dispatch(googleLogin());
+  };
+
+  if (isLoggedIn) return <Redirect to="/" />;
+
   return (
-    <div className="main">
-      <div className="dashboard">
-        <div className="top-row">
-          <a href="/">
-            <img src={lambdaBanner} alt="Lambda School Logo" />
-          </a>
-        </div>
-        <div className="title">Login to Lambda Bugtracker</div>
-        {isLoading ? (
-          <Loading />
-        ) : (
+    <div className='login-page'>
+      <div className="main">
+        <div className="dashboard">
+          <div className="top-row">
+            <a href="/">
+              <img src={lambdaBanner} alt="Lambda School Logo" />
+            </a>
+          </div>
+          <div className="title">Login to Lambda Bugtracker</div>
           <Form onSubmit={handleSubmit(onSubmit)}>
             <Input
               type="text"
@@ -85,14 +88,15 @@ export default function Register() {
               ref={register}
             />
             {errors.password && <p>{errors.password.message}</p>}
-            <Button type="submit">Login</Button>
+            <button type="submit">Login</button>
             {error && <div className="error">{error}</div>}
           </Form>
-        )}
+          <button onClick={handleGoogleLogin}>Login with Google!</button>
+        </div>
+        <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+          <polygon points="0 0,100 0,100 100,0 100" />
+        </svg>
       </div>
-      <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-        <polygon points="0 0,100 0,100 100,0 100" />
-      </svg>
     </div>
   );
 }

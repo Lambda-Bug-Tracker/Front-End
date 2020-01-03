@@ -52,7 +52,7 @@ export const login = data => dispatch => {
 };
 
 /* EMAIL REGISTER ACTION */
-export const register = data => dispatch => {
+export const emailRegistration = data => dispatch => {
   dispatch({ type: REGISTER_START });
   firebase
     .auth()
@@ -61,12 +61,12 @@ export const register = data => dispatch => {
       const newUser = {
         firebase_id: res.user.uid,
         email: res.user.email,
-        displayName: `${data.first_name} ${data.last_name}`
+        display_name: `${data.first_name} ${data.last_name}`
       };
       // a commit
       console.log("New user info:", newUser);
       axios
-        .post(`${backendURL}/auth/register`, newUser) // { headers: auth }
+        .post(`${backendURL}auth/register`, newUser) // { headers: auth }
         .then(response => console.log("Response:", response))
         .catch(err => console.log("Error:", err));
     })
@@ -141,12 +141,12 @@ export const googleRegister = () => dispatch => {
       const newUser = {
         firebase_id: res.user.uid,
         email: res.user.email,
-        displayName: res.user.displayName
+        display_name: res.user.displayName
       };
       // a commit
       console.log("New user info:", newUser);
       axios
-        .post(`${backendURL}/auth/register`, newUser) // { headers: auth }
+        .post(`${backendURL}auth/register`, newUser) // { headers: auth }
         .then(response => console.log("Response:", response))
         .catch(err => console.log("Error:", err));
       // The signed-in user info.

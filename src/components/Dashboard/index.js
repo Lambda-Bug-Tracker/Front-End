@@ -1,15 +1,16 @@
-import React from "react";
-import { Wrapper, Button } from "bushido-strap";
-import { useDispatch } from "react-redux";
-import { signOut } from "../../store/actions/auth";
+import React, { useState } from 'react';
 import { Link } from "react-router-dom";
-import lambdaBanner from "../../assets/img/lambda-banner.png";
+import { Wrapper, Button } from 'bushido-strap';
+import { useDispatch } from 'react-redux';
+import { logout } from '../../store/actions/auth';
+import CreateProject from './CreateProject';
+import lambdaBanner from '../../assets/img/lambda-banner.png';
 import "./styles.scss";
 
 import styled, { keyframes } from "styled-components";
-import { flipInX, tada } from "react-animations";
+import {pulse, tada} from "react-animations";
 
-const flipAnim = keyframes`${flipInX}`;
+const flipAnim = keyframes`${pulse}`;
 const tadaAnim = keyframes`${tada}`;
 
 const randomDuration = () => {
@@ -25,58 +26,68 @@ const ProjectCard = styled.div`
 `;
 
 export default function Dashboard() {
+  const [isCreating, setIsCreating] = useState(false);
   const dispatch = useDispatch();
 
+  function handleNewProject(e) {
+    e.preventDefault()
+    setIsCreating(true)
+  }
+
   function handleSignOut() {
-    dispatch(signOut());
+    dispatch(logout());
   }
   return (
     <Wrapper>
-      <div className="main">
-        <div className="dashboard">
-          <div className="top-row">
-            <img src={lambdaBanner} alt="Lambda School Logo" />
-            <Button onClick={handleSignOut}>Sign Out</Button>
-          </div>
-          <div className="main-container">
-            <div className="project-group-container">
-              <h2>Welcome First_Name Last_Name!</h2>
-              <h4 className="projecth4">These are your projects:</h4>
-              <div className="project-group">
-                {/* Map over user projects here */}
-                <Link to="/project">
-                  <ProjectCard className="project-card">
-                    Project_Name
-                  </ProjectCard>
-                </Link>
-                <Link to="/project">
-                  <ProjectCard className="project-card">
-                    Project_Name
-                  </ProjectCard>
-                </Link>
-                <Link to="/project">
-                  <ProjectCard className="project-card">
-                    Project_Name
-                  </ProjectCard>
-                </Link>
-                <Link to="/project">
-                  <ProjectCard className="project-card">
-                    Project_Name
-                  </ProjectCard>
-                </Link>
-                <Link to="/project">
-                  <ProjectCard className="project-card">
-                    Project_Name
-                  </ProjectCard>
-                </Link>
+      <div className='dashboard'>
+        <div className="main">
+          <div className="dashboard">
+            <div className="top-row">
+              <img src={lambdaBanner} alt="Lambda School Logo" />
+              <Button onClick={handleSignOut}>Sign Out</Button>
+            </div>
+            <div className="main-container">
+              <div className="project-group-container">
+                <h2>Welcome First_Name Last_Name!</h2>
+                {isCreating ? <CreateProject setIsCreating={setIsCreating} /> : 
+                <>
+                <h4 className="projecth4">These are your projects:</h4>
+  
+                <div className="project-group">
+                  {/* Map over user projects here */}
+                  <Link to="/project">
+                    <ProjectCard className="project-card">
+                      Project_Name
+                    </ProjectCard>
+                  </Link>
+                  <Link to="/project">
+                    <ProjectCard className="project-card">
+                      Project_Name
+                    </ProjectCard>
+                  </Link>
+                  <Link to="/project">
+                    <ProjectCard className="project-card">
+                      Project_Name
+                    </ProjectCard>
+                  </Link>
+                  <Link to="/project">
+                    <ProjectCard className="project-card">
+                      Project_Name
+                    </ProjectCard>
+                  </Link>
+                  <Link to="/project">
+                    <ProjectCard className="project-card">
+                      Project_Name
+                    </ProjectCard>
+                  </Link>
+                </div>
+                <Button onClick={handleNewProject}>New Project</Button>
+                </>
+                }
               </div>
-              <Button>New Project</Button>
             </div>
           </div>
         </div>
-        <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-          <polygon points="0 0,100 0,100 100,0 100" />
-        </svg>
       </div>
     </Wrapper>
   );
