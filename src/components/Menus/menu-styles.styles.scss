@@ -1,4 +1,16 @@
-.open{
-    margin-left: 15px;
-    margin-bottom: 15px;
+.open {
+  margin-left: 15px;
+  margin-bottom: 15px;
+}
+
+.sign-out-btn {
+  color: white;
+  background: none;
+  border: none;
+  font-size: 2.4rem;
+  margin-left: 35px;
+
+  &:hover {
+    color: #bb1333;
+  }
 }
