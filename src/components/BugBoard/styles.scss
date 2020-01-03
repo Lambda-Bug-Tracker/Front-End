@@ -56,6 +56,22 @@ $phone: "(min-width: 320px) and (max-width: 768px)";
       display: none;
     }
   }
+  /* Title and Add New Bug Button */
+  .title-container{
+    // border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    button{
+      color: #fff;
+      margin: 5px;
+      padding: 16px 32px;
+      background: #bb1333;
+      border: 0;
+      cursor: pointer;
+    }
+  }
 
   main {
     width: 100%;
