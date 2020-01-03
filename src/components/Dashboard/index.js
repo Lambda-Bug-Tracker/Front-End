@@ -88,14 +88,6 @@ export default function Dashboard() {
             </div>
           </div>
         </div>
-<<<<<<< HEAD
-        </div>
-        <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-          <polygon points="0 0,100 0,100 100,0 100" />
-        </svg>
-        
-=======
->>>>>>> master
       </div>
     </Wrapper>
   );

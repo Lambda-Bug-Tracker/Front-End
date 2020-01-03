@@ -5,8 +5,17 @@ const initialState = {
      id: Math.random(),
     description: 'everything is broken!',
     bugType: 1,
-    priority: 3
-    }],
+    priority: 3,
+    bugState: 1
+    },
+    {name:'Bad Bug 2',
+     id: Math.random(),
+    description: 'everything is broken again!',
+    bugType: 2,
+    priority: 1,
+    bugState: 1
+    }
+],
     squashing:[],
     review:[],
     squashed:[]
@@ -15,28 +24,19 @@ const initialState = {
 export const projectBugs = (state = initialState, action) => {
     switch (action.type) {
         case UPDATE_BUGSTOSQUASH :
-            let count = 0
-            state.bugsToSquash.forEach((item) => {
-                if(item.id === action.payload.item.id) {
-                    count = count + 1
-                }
-            })
-            if(count === 0) {
-                return {
-                    ...state,
-                    bugsToSquash: [...state.bugsToSquash, action.payload.item],
-                    squashing: state.squashing.filter(item => {
-                        return item.id !== action.payload.item.id
-                    }),
-                    review: state.review.filter(item => {
-                        return item.id !== action.payload.item.id
-                    }),
-                    squashed: state.squashed.filter(item => {
-                        return item.id !== action.payload.item.id
-                    })
-                }
+            return {
+                ...state,
+                bugsToSquash: [...state.bugsToSquash, action.payload.item],
+                squashing: state.squashing.filter(item => {
+                    return item.id !== action.payload.item.id
+                }),
+                review: state.review.filter(item => {
+                    return item.id !== action.payload.item.id
+                }),
+                squashed: state.squashed.filter(item => {
+                    return item.id !== action.payload.item.id
+                })
             }
-            
         case UPDATE_SQUASHING :
             return {
                 ...state,

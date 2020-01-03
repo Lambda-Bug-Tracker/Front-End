@@ -14,7 +14,7 @@ import { BugCard } from '../BugCard'
 const Column1 = () => {
 const data = useSelector(state => state.projectBugs)
 const dispatch = useDispatch()
-const [{isOver}, drop] = useDrop({
+const [{isOver, canDrop}, drop] = useDrop({
     accept: 'CARD',
     drop(item) {
         dispatch({type: UPDATE_BUGSTOSQUASH, payload: item})
@@ -22,6 +22,7 @@ const [{isOver}, drop] = useDrop({
     collect: monitor => ({
         isOver: !!monitor.isOver()
     })
+
 })
 console.log(data)
 return (
