@@ -22,19 +22,27 @@ export default function Dashboard() {
             <Button onClick={handleSignOut}>Sign Out</Button></div>
             <div className='main-container'>
               <h2>Welcome First_Name Last_Name!</h2>
-              <div className="bug-group-container">
-                <div className="bug-group">
-                  <h4 className="progressh4">Projects I belong to</h4>
-                    <div className="progress-column">
-                      List of projects
+              <div className="project-group-container">
+              <h4 className="projecth4">These are your projects:</h4>
+                <div className="project-group">
+                  {/* Map over user projects here */}
+                    <div className="project-card">
+                      Project_Name
                     </div>
-                  </div>
-                <div className="bug-group">
-                  <h4 className="progressh4">Projects I am admin of</h4>
-                    <div className="progress-column">
-                      List of projects
+                    <div className="project-card">
+                      Project_Name
                     </div>
-                  </div>
+                    <div className="project-card">
+                      Project_Name
+                    </div>
+                    <div className="project-card">
+                      Project_Name
+                    </div>
+                    <div className="project-card">
+                      Project_Name
+                    </div>
+                </div>
+                <Button>New Project</Button>
               </div>
             </div>
         </div>
