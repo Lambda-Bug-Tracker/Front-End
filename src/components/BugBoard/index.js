@@ -36,32 +36,31 @@ const BugBoard = ({ history }) => {
   return (
     <Wrapper>
       <div className="bug-board-container">
-        <div className="sidebar-container">
+        {/* <div className="sidebar-container">
           <UserBar />
-        </div>
+        </div> */}
         <div className="right-container">
           <div className="top-container">
-              <h1>Lambda Bug Tracker </h1>
-              <img className="logo" alt="logo" src={Logo} />
+            <h1>Lambda Bug Tracker </h1>
+            <img className="logo" alt="logo" src={Logo} />
             <HamburgerMenu />
           </div>
-            {addingNewBug ? (
-              <AddNewBug id={id} setAddingNewBug={setAddingNewBug} />
-            ) : (
-              <>
-                <div className="title-container">
-                  <h2>
-                    {history.location.state &&
-                      history.location.state.project_name}
-                  </h2>
-                  <button onClick={handleAddNewBug}>Add New Bug</button>
-                </div>
-                <div className="bug-group-container">
-                  <BugGroup />
-                </div>
-              </>
-            )}
-
+          {addingNewBug ? (
+            <AddNewBug id={id} setAddingNewBug={setAddingNewBug} />
+          ) : (
+            <>
+              <div className="title-container">
+                <h2>
+                  {history.location.state &&
+                    history.location.state.project_name}
+                </h2>
+                <button onClick={handleAddNewBug}>Add New Bug</button>
+              </div>
+              <div className="bug-group-container">
+                <BugGroup />
+              </div>
+            </>
+          )}
         </div>
       </div>
     </Wrapper>
