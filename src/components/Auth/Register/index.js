@@ -112,10 +112,10 @@ export default function Register() {
             />
             {errors.password && <p>{errors.password.message}</p>}
   
-            <Button type="submit">Register</Button>
+            <button type="submit">Register</button>
             {error && <div className="error">{error}</div>}
           </Form>
-          <Button onClick={handleGoogleAuth}>Register with Google!</Button>
+          <button onClick={handleGoogleAuth}>Register with Google!</button>
         </div>
         <svg viewBox="0 0 100 100" preserveAspectRatio="none">
           <polygon points="0 0,100 0,100 100,0 100" />
