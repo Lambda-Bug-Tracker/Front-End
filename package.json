@@ -6,7 +6,7 @@
     "@animated-burgers/burger": "^1.1.2",
     "@animated-burgers/burger-arrow": "^1.1.2",
     "@animated-burgers/burger-squeeze": "^1.1.2",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "bushido-strap": "^1.0.1",
     "classnames": "^2.2.6",
     "firebase": "^7.6.1",
